@@ -1,0 +1,95 @@
+﻿Log file open, 04/07/15 00:50:32
+LogInit:Display: Running engine for game: FFMProject
+LogInit: Version: 4.7.4-2497108+++depot+UE4-Releases+4.7
+LogInit: API Version: 2455222
+LogInit: Compiled (64-bit): Mar 31 2015 09:40:25
+LogInit: Compiled with Visual C++: 18.00.21005.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++depot+UE4-Releases+4.7
+LogInit: Command line: 
+LogInit: Base directory: C:/Program Files/Epic Games/4.7/Engine/Binaries/Win64/
+LogInit: Rocket: 1
+[2015.04.06-22.50.32:518][  0]LogTaskGraph: Started task graph with 3 named threads and 6 total threads.
+[2015.04.06-22.50.32:573][  0]LogOnline:Warning: No default platform service specified for OnlineSubsystem
+[2015.04.06-22.50.32:585][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2015.04.06-22.50.32:593][  0]LogInit: Object subsystem initialized
+[2015.04.06-22.50.32:595][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'TranslucentSortAxis = (X=0.000000,Y=-1.000000,Z=0.000000)'
+[2015.04.06-22.50.32:595][  0]LogConsoleResponse:Warning:   Found in ini file 'D:/Works/Unreal/FFMProject/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.04.06-22.50.32:595][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'UIScaleRule = ShortestSide'
+[2015.04.06-22.50.32:595][  0]LogConsoleResponse:Warning:   Found in ini file 'D:/Works/Unreal/FFMProject/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.04.06-22.50.32:595][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'UIScaleCurve = (EditorCurveData=(Keys=),ExternalCurve=None)'
+[2015.04.06-22.50.32:595][  0]LogConsoleResponse:Warning:   Found in ini file 'D:/Works/Unreal/FFMProject/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.04.06-22.50.32:595][  0]LogInit: Selected Device Profile: [Windows]
+[2015.04.06-22.50.32:595][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2015.04.06-22.50.32:599][  0]LogInit: Computer: SGSOFT-PC
+[2015.04.06-22.50.32:599][  0]LogInit: User: SGSoft
+[2015.04.06-22.50.32:599][  0]LogInit: CPU Page size=4096, Cores=4
+[2015.04.06-22.50.32:599][  0]LogInit: High frequency timer resolution =3.330093 MHz
+[2015.04.06-22.50.32:599][  0]LogMemory: Memory total: Physical=8.0GB (8GB approx) Virtual=131072.0GB
+[2015.04.06-22.50.32:599][  0]LogMemory: Platform Memory Stats for Windows
+[2015.04.06-22.50.32:599][  0]LogMemory: Process Physical Memory: 45.66 MB used, 45.66 MB peak
+[2015.04.06-22.50.32:599][  0]LogMemory: Process Virtual Memory: 22.56 MB used, 22.56 MB peak
+[2015.04.06-22.50.32:599][  0]LogMemory: Physical Memory: 4814.97 MB used, 8144.52 MB total
+[2015.04.06-22.50.32:599][  0]LogMemory: Virtual Memory: 285.19 MB used, 134217728.00 MB total
+[2015.04.06-22.50.32:621][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 760 (Feature Level 11_0)
+[2015.04.06-22.50.32:621][  0]LogD3D11RHI: Adapter has 1985MB of dedicated video memory, 0MB of dedicated system memory, and 2048MB of shared system memory, 2 output[s]
+[2015.04.06-22.50.32:622][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2015.04.06-22.50.32:622][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 256MB of shared system memory, 0 output[s]
+[2015.04.06-22.50.32:622][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2015.04.06-22.50.32:625][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2015.04.06-22.50.32:636][  0]LogD3D11RHI: Async texture creation enabled
+[2015.04.06-22.50.32:692][  0]LogTextLocalizationManager: The requested culture ('en_US') has no localization data; parent culture's ('en') localization data will be used.
+[2015.04.06-22.50.32:744][  0]LogTextLocalizationManager:Warning: Loading localization resources contain conflicting entries for (Namespace:UICommands, Key:Save_ToolTip):
+Resource: (C:/Program Files/Epic Games/4.7/Engine/Content/Localization/Editor/en/Editor.locres) Hash: (-29098895) String: (Saves the current level to disk)
+Resource: (C:/Program Files/Epic Games/4.7/Engine/Content/Localization/Engine/en/Engine.locres) Hash: (-1280300587) String: (Save selected data to vlog file)
+[2015.04.06-22.50.32:744][  0]LogTextLocalizationManager:Warning: Loading localization resources contain conflicting entries for (Namespace:ContentBrowser, Key:ImportAssetToolTip):
+Resource: (C:/Program Files/Epic Games/4.7/Engine/Content/Localization/Editor/en/Editor.locres) Hash: (-630476809) String: (Import to {0}...)
+Resource: (C:/Program Files/Epic Games/4.7/Engine/Content/Localization/Editor/en/Editor.locres) Hash: (1271782899) String: (Imports an asset from file to this folder.)
+[2015.04.06-22.50.32:819][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2015.04.06-22.50.34:920][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.04.06-22.50.35:417][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.04.06-22.50.35:474][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2015.04.06-22.50.35:507][  0]LogDerivedDataCache: Loaded boot cache 0.03s 39MB C:/Users/SGSoft/AppData/Local/UnrealEngine/4.7/DerivedDataCache/Boot.ddc.
+[2015.04.06-22.50.35:507][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/SGSoft/AppData/Local/UnrealEngine/4.7/DerivedDataCache/Boot.ddc
+[2015.04.06-22.50.35:507][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file D:/Works/Unreal/FFMProject/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2015.04.06-22.50.35:507][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2015.04.06-22.50.35:616][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2015.04.06-22.50.35:628][  0]LogDerivedDataCache: Using Local data cache path C:/Users/SGSoft/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2015.04.06-22.50.36:007][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2015.04.06-22.50.36:007][  0]LogMeshUtilities: No automatic mesh merging module available
+[2015.04.06-22.50.36:344][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2015.04.06-22.50.36:416][  0]LogSlate:Warning: Failed to load font data from '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf'
+[2015.04.06-22.50.37:121][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2015.04.06-22.50.37:195][  0]LogLinker:Warning: Can't find file '/Game/Materials/BaseColor'
+[2015.04.06-22.50.37:195][  0]LogLinker:Warning: Can't find file '/Game/Materials/BaseColor'
+[2015.04.06-22.50.37:195][  0]LogUObjectGlobals:Warning: Failed to find object 'MaterialInterface /Game/Materials/BaseColor.BaseColor'
+[2015.04.06-22.50.37:195][  0]Error: CDO Constructor (BoxPrimitiveModel): Failed to find Material'/Game/Materials/BaseColor.BaseColor'
+
+[2015.04.06-22.50.39:281][  0]LogWindows: === Critical error: ===
+Fatal error!
+
+Unhandled Exception: EXCEPTION_ACCESS_VIOLATION writing address 0x00000528
+
+UE4Editor-FFMProject-8826.dll!AMainScene::AMainScene() (0x00007ffcae083d92) + 45 bytes [d:\works\unreal\ffmproject\source\ffmproject\mainscene.cpp:12]
+UE4Editor-CoreUObject.dll!UClass::CreateDefaultObject() (0x00007ffcbaf8cc53) + 42 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\coreuobject\private\uobject\class.cpp:2535]
+UE4Editor-CoreUObject.dll!UObjectLoadAllCompiledInDefaultProperties() (0x00007ffcbb0f8735) + 19 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\coreuobject\private\uobject\uobjectbase.cpp:739]
+UE4Editor-CoreUObject.dll!ProcessNewlyLoadedUObjects() (0x00007ffcbb0e9dd2) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\coreuobject\private\uobject\uobjectbase.cpp:815]
+UE4Editor-CoreUObject.dll!TBaseStaticDelegateInstance<void __cdecl(void)>::ExecuteIfSafe() (0x00007ffcbaf93c97) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\public\delegates\delegateinstancesimpl_variadics.inl:921]
+UE4Editor-Core.dll!TBaseMulticastDelegate<void>::Broadcast() (0x00007ffcb9f66fc5) + 11 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\public\delegates\delegatesignatureimpl_variadics.inl:1030]
+UE4Editor-Core.dll!FModuleManager::LoadModuleWithFailureReason() (0x00007ffcba113212) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\private\modules\modulemanager.cpp:359]
+UE4Editor-Projects.dll!FModuleDescriptor::LoadModulesForPhase() (0x00007ffcbf7bac40) + 50 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\projects\private\moduledescriptor.cpp:350]
+UE4Editor-Projects.dll!FProjectManager::LoadModulesForProject() (0x00007ffcbf7bb035) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\projects\private\projectmanager.cpp:53]
+UE4Editor.exe!FEngineLoop::LoadStartupModules() (0x00007ff6952b7571) + 18 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\launch\private\launchengineloop.cpp:1863]
+UE4Editor.exe!FEngineLoop::PreInit() (0x00007ff6952bb255) + 8 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\launch\private\launchengineloop.cpp:1400]
+UE4Editor.exe!GuardedMain() (0x00007ff6952b21fb) + 15 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\launch\private\launch.cpp:110]
+UE4Editor.exe!GuardedMainWrapper() (0x00007ff6952b26ea) + 5 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\launch\private\windows\launchwindows.cpp:126]
+UE4Editor.exe!WinMain() (0x00007ff6952c2219) + 17 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\launch\private\windows\launchwindows.cpp:202]
+UE4Editor.exe!__tmainCRTStartup() (0x00007ff6952c3159) + 21 bytes [f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c:618]
+KERNEL32.DLL!UnknownFunction (0x00007ffcdb7a13d2) + 0 bytes [UnknownFile:0]
+ntdll.dll!UnknownFunction (0x00007ffcdc4be954) + 0 bytes [UnknownFile:0]
+ntdll.dll!UnknownFunction (0x00007ffcdc4be954) + 0 bytes [UnknownFile:0]
+
+
+[2015.04.06-22.50.39:387][  0]LogExit: Executing StaticShutdownAfterError
+[2015.04.06-22.50.39:389][  0]LogWindows: FPlatformMisc::RequestExit(1)
+[2015.04.06-22.50.39:389][  0]Log file closed, 04/07/15 00:50:39

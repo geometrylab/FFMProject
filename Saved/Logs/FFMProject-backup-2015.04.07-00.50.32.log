@@ -1,0 +1,454 @@
+﻿Log file open, 04/07/15 00:38:09
+LogInit:Display: Running engine for game: FFMProject
+LogInit: Version: 4.7.4-2497108+++depot+UE4-Releases+4.7
+LogInit: API Version: 2455222
+LogInit: Compiled (64-bit): Mar 31 2015 09:40:25
+LogInit: Compiled with Visual C++: 18.00.21005.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++depot+UE4-Releases+4.7
+LogInit: Command line: 
+LogInit: Base directory: C:/Program Files/Epic Games/4.7/Engine/Binaries/Win64/
+LogInit: Rocket: 1
+[2015.04.06-22.38.09:098][  0]LogTaskGraph: Started task graph with 3 named threads and 6 total threads.
+[2015.04.06-22.38.09:153][  0]LogOnline:Warning: No default platform service specified for OnlineSubsystem
+[2015.04.06-22.38.09:179][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2015.04.06-22.38.09:189][  0]LogInit: Object subsystem initialized
+[2015.04.06-22.38.09:191][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'TranslucentSortAxis = (X=0.000000,Y=-1.000000,Z=0.000000)'
+[2015.04.06-22.38.09:191][  0]LogConsoleResponse:Warning:   Found in ini file 'D:/Works/Unreal/FFMProject/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.04.06-22.38.09:191][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'UIScaleRule = ShortestSide'
+[2015.04.06-22.38.09:191][  0]LogConsoleResponse:Warning:   Found in ini file 'D:/Works/Unreal/FFMProject/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.04.06-22.38.09:191][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'UIScaleCurve = (EditorCurveData=(Keys=),ExternalCurve=None)'
+[2015.04.06-22.38.09:191][  0]LogConsoleResponse:Warning:   Found in ini file 'D:/Works/Unreal/FFMProject/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.04.06-22.38.09:191][  0]LogInit: Selected Device Profile: [Windows]
+[2015.04.06-22.38.09:191][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2015.04.06-22.38.09:257][  0]LogInit: Computer: SGSOFT-PC
+[2015.04.06-22.38.09:257][  0]LogInit: User: SGSoft
+[2015.04.06-22.38.09:257][  0]LogInit: CPU Page size=4096, Cores=4
+[2015.04.06-22.38.09:257][  0]LogInit: High frequency timer resolution =3.330093 MHz
+[2015.04.06-22.38.09:257][  0]LogMemory: Memory total: Physical=8.0GB (8GB approx) Virtual=131072.0GB
+[2015.04.06-22.38.09:257][  0]LogMemory: Platform Memory Stats for Windows
+[2015.04.06-22.38.09:257][  0]LogMemory: Process Physical Memory: 45.69 MB used, 45.69 MB peak
+[2015.04.06-22.38.09:257][  0]LogMemory: Process Virtual Memory: 22.52 MB used, 22.52 MB peak
+[2015.04.06-22.38.09:257][  0]LogMemory: Physical Memory: 2785.88 MB used, 8144.52 MB total
+[2015.04.06-22.38.09:257][  0]LogMemory: Virtual Memory: 285.19 MB used, 134217728.00 MB total
+[2015.04.06-22.38.09:285][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 760 (Feature Level 11_0)
+[2015.04.06-22.38.09:285][  0]LogD3D11RHI: Adapter has 1985MB of dedicated video memory, 0MB of dedicated system memory, and 2048MB of shared system memory, 2 output[s]
+[2015.04.06-22.38.09:286][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2015.04.06-22.38.09:286][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 256MB of shared system memory, 0 output[s]
+[2015.04.06-22.38.09:286][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2015.04.06-22.38.09:288][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2015.04.06-22.38.09:300][  0]LogD3D11RHI: Async texture creation enabled
+[2015.04.06-22.38.09:356][  0]LogTextLocalizationManager: The requested culture ('en_US') has no localization data; parent culture's ('en') localization data will be used.
+[2015.04.06-22.38.09:407][  0]LogTextLocalizationManager:Warning: Loading localization resources contain conflicting entries for (Namespace:UICommands, Key:Save_ToolTip):
+Resource: (C:/Program Files/Epic Games/4.7/Engine/Content/Localization/Editor/en/Editor.locres) Hash: (-29098895) String: (Saves the current level to disk)
+Resource: (C:/Program Files/Epic Games/4.7/Engine/Content/Localization/Engine/en/Engine.locres) Hash: (-1280300587) String: (Save selected data to vlog file)
+[2015.04.06-22.38.09:407][  0]LogTextLocalizationManager:Warning: Loading localization resources contain conflicting entries for (Namespace:ContentBrowser, Key:ImportAssetToolTip):
+Resource: (C:/Program Files/Epic Games/4.7/Engine/Content/Localization/Editor/en/Editor.locres) Hash: (-630476809) String: (Import to {0}...)
+Resource: (C:/Program Files/Epic Games/4.7/Engine/Content/Localization/Editor/en/Editor.locres) Hash: (1271782899) String: (Imports an asset from file to this folder.)
+[2015.04.06-22.38.09:474][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2015.04.06-22.38.11:377][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.04.06-22.38.11:871][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.04.06-22.38.11:928][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2015.04.06-22.38.11:973][  0]LogDerivedDataCache: Loaded boot cache 0.04s 39MB C:/Users/SGSoft/AppData/Local/UnrealEngine/4.7/DerivedDataCache/Boot.ddc.
+[2015.04.06-22.38.12:026][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/SGSoft/AppData/Local/UnrealEngine/4.7/DerivedDataCache/Boot.ddc
+[2015.04.06-22.38.12:026][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file D:/Works/Unreal/FFMProject/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2015.04.06-22.38.12:026][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2015.04.06-22.38.12:133][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2015.04.06-22.38.12:146][  0]LogDerivedDataCache: Using Local data cache path C:/Users/SGSoft/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2015.04.06-22.38.14:765][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2015.04.06-22.38.14:765][  0]LogMeshUtilities: No automatic mesh merging module available
+[2015.04.06-22.38.15:146][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2015.04.06-22.38.15:216][  0]LogSlate:Warning: Failed to load font data from '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf'
+[2015.04.06-22.38.15:884][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2015.04.06-22.38.16:139][  0]SourceControl: Info Source control is disabled
+[2015.04.06-22.38.16:139][  0]SourceControl: Info Source control is disabled
+[2015.04.06-22.38.16:139][  0]SourceControl: Info Source control is disabled
+[2015.04.06-22.38.16:139][  0]LogSourceControl: RunCommandInternalRaw: 'git version'
+[2015.04.06-22.38.16:139][  0]LogSourceControl: RunCommandInternalRaw: ExecProcess ReturnCode=2 OutResults=''
+[2015.04.06-22.38.16:147][  0]SourceControl: Info Source control is disabled
+[2015.04.06-22.38.16:311][  0]LogObj: 24258 objects as part of root set at end of initial load.
+[2015.04.06-22.38.16:311][  0]LogUObjectAllocator: 5144968 out of 0 bytes used by permanent object pool.
+[2015.04.06-22.38.16:386][  0]LogEngine: Initializing Engine...
+[2015.04.06-22.38.18:540][  0]LogInit: XAudio2 using 'Lautsprecher (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2015.04.06-22.38.18:548][  0]LogInit: FAudioDevice initialized.
+[2015.04.06-22.38.18:581][  0]LogAIModule: Creating AISystem for world NewWorld
+[2015.04.06-22.38.18:628][  0]LogDerivedDataCache: Saved boot cache 0.05s 39MB C:/Users/SGSoft/AppData/Local/UnrealEngine/4.7/DerivedDataCache/Boot.ddc.
+[2015.04.06-22.38.18:632][  0]LogInit: Texture streaming: Enabled
+[2015.04.06-22.38.18:714][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2015.04.06-22.38.18:714][  0]LogAnalytics: ET APIKey = Rocket.Release. APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.7.4-2497108+++depot+UE4-Releases+4.7
+[2015.04.06-22.38.18:714][  0]LogAnalytics: ET APIKey = Rocket.Release. DataRouterUploadURL = https://datarouter-public-service-gamedev.ol.epicgames.net/datarouter/api/v1/public/data. AppVersion = 4.7.4-2497108+++depot+UE4-Releases+4.7
+[2015.04.06-22.38.18:714][  0]LogAnalytics: SetUserId a4f2ed4f47d76c443fcab9a99498089f|ab70b434162440e89bbb6a7cf7531383|e4d26380-4fa6-4617-996d-595afa92f20d
+[2015.04.06-22.38.18:715][  0]LogAnalytics: AnalyticsET::StartSession [Rocket.Release]
+[2015.04.06-22.38.18:731][  0]LogInit: Transaction tracking system initialized
+[2015.04.06-22.38.18:871][  0]BlueprintLog: New page: Editor Load
+[2015.04.06-22.38.18:907][  0]LogAssetRegistry: FAssetRegistry took 0.0106 seconds to start up
+[2015.04.06-22.38.18:907][  0]LogDirectoryWatcher:Warning: Failed to begin reading directory changes for ../../../Engine/Plugins/Experimental/CharacterAI/Content/. Error: 0
+[2015.04.06-22.38.19:390][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.04.06-22.38.19:717][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.04.06-22.38.19:939][  0]LogSlate:Warning: Failed to load font data from '../../../Engine/Content/Editor/Slate/Fonts/Roboto-Regular.ttf'
+[2015.04.06-22.38.19:939][  0]LogSlate:Warning: Failed to load font data from '../../../Engine/Content/Editor/Slate/Fonts/Roboto-Bold.ttf'
+[2015.04.06-22.38.19:943][  0]LogConsoleResponse:Display: 
+[2015.04.06-22.38.20:318][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2015.04.06-22.38.20:443][  0]SourceControl: Info Source control is disabled
+[2015.04.06-22.38.20:443][  0]Cmd: MAP LOAD FILE="D:/Works/Unreal/FFMProject/Content/StarterContent/Maps/Minimal_Default.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.04.06-22.38.20:529][  0]LightingResults: New page: Lighting Build
+[2015.04.06-22.38.20:542][  0]MapCheck: New page: Map Check
+[2015.04.06-22.38.20:542][  0]LightingResults: New page: Lighting Build
+[2015.04.06-22.38.20:551][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000A58BFDD440
+[2015.04.06-22.38.28:323][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.04.06-22.38.28:332][  0]LogAIModule: Creating AISystem for world Minimal_Default
+[2015.04.06-22.38.28:349][  0]Cmd: MAP CHECKDEP
+[2015.04.06-22.38.28:349][  0]MapCheck: New page: Minimal_Default - Apr 7, 2015, 2:38:28 AM
+[2015.04.06-22.38.28:415][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 65.989ms to complete.
+[2015.04.06-22.38.28:415][  0]LogFileHelpers: Loading map 'Minimal_Default' took 7.972
+[2015.04.06-22.38.30:045][  0]LogCollectionManager: Loaded 0 collections in 0.001754 seconds
+[2015.04.06-22.38.30:073][  0]LogContentBrowser: Native class hierarchy populated in 0.0115 seconds. Added 1699 classes and 263 folders.
+[2015.04.06-22.38.30:641][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0069 seconds. Added 1 classes and 2 folders.
+[2015.04.06-22.38.32:741][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2015.04.06-22.38.33:241][  0]LogSlate:Warning: Failed to load font data from 'Veranda'
+[2015.04.06-22.38.33:519][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2015.04.06-22.38.33:583][  0]LogLoad: Full Startup: 27.40 seconds (BP compile: 0.08 seconds)
+[2015.04.06-22.38.35:818][  0]LogRenderer:Warning: Reallocating scene render targets to support 1208x576 (Frame:2).
+[2015.04.06-22.38.36:683][  3]LogAssetRegistry: Asset discovery search completed in 17.7864 seconds
+[2015.04.06-22.40.13:366][529]LogContentBrowser:Verbose: The content browser source was changed by the sources view to '/Classes_Game/FFMProject'
+[2015.04.06-22.40.33:814][362]Recompiling FFMProject...
+[2015.04.06-22.40.33:814][362]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.7/Engine/Binaries/DotNET/UnrealBuildTool.exe FFMProject -ModuleWithSuffix FFMProject 8144 Win64 Development -editorrecompile -canskiplink "D:/Works/Unreal/FFMProject/FFMProject.uproject" -rocket  -rocket]
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: New page: Compilation - Apr 7, 2015, 2:44:26 AM
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info Parsing headers for FFMProjectEditor
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info Reflection code generated for FFMProjectEditor
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info Performing 4 actions (4 in parallel)
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info ProceduralMeshComponent.cpp
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info BoxPrimitiveModel.cpp
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info FFMProject.generated.cpp
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info [4/4] Link UE4Editor-FFMProject-8144.dll
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info    Creating library D:\Works\Unreal\FFMProject\Intermediate\Build\Win64\FFMProjectEditor\Development\UE4Editor-FFMProject-8144.lib and object D:\Works\Unreal\FFMProject\Intermediate\Build\Win64\FFMProjectEditor\Development\UE4Editor-FFMProject-8144.exp
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info Cumulative action seconds (8 processors): 0.00 building projects, 541.02 compiling, 0.00 creating app bundles, 0.00 generating debug info, 4.66 linking, 0.00 other
+[2015.04.06-22.44.26:628][362]CompilerResultsLog: Info UBT execution time: 232.12 seconds
+[2015.04.06-22.44.26:628][362]LogMainFrame: MainFrame: Module compiling took 234.357 seconds
+[2015.04.06-22.44.26:697][362]LogClass: Could not find existing class BoxPrimitiveModel in package /Script/FFMProject for HotReload, assuming new class
+[2015.04.06-22.44.26:698][362]LogClass: ProceduralMeshVertex HotReload.
+[2015.04.06-22.44.26:698][362]LogClass: ProceduralMeshTriangle HotReload.
+[2015.04.06-22.44.26:702][362]LogContentBrowser: Native class hierarchy updated for 'FFMProject' in 0.0042 seconds. Added 4 classes and 2 folders.
+[2015.04.06-22.44.26:703][362]Warning: HotReload successful (3 functions remapped  2 scriptstructs remapped)
+[2015.04.06-22.44.26:717][362]LogContentBrowser: Native class hierarchy populated in 0.0097 seconds. Added 1701 classes and 265 folders.
+[2015.04.06-22.44.26:719][362]Warning: HotReload operation took 234.4s.
+[2015.04.06-22.44.26:935][362]LogVSAccessor:Warning: Couldn't goto line number '0' in 'D:/Works/Unreal/FFMProject/Source/FFMProject/BoxPrimitiveModel.h'
+[2015.04.06-22.44.27:024][362]LogVSAccessor:Warning: Couldn't goto line number '0' in 'D:/Works/Unreal/FFMProject/Source/FFMProject/BoxPrimitiveModel.cpp'
+[2015.04.06-22.44.27:034][362]LogHotReload: New module detected: UE4Editor-FFMProject-8144.dll
+[2015.04.06-22.44.27:216][363]LogHotReload: Starting Hot-Reload from IDE
+[2015.04.06-22.44.27:317][363]LogContentBrowser: Native class hierarchy updated for 'FFMProject' in 0.0030 seconds. Added 4 classes and 2 folders.
+[2015.04.06-22.44.27:318][363]Warning: HotReload successful (0 functions remapped  2 scriptstructs remapped)
+[2015.04.06-22.44.27:345][363]LogContentBrowser: Native class hierarchy populated in 0.0126 seconds. Added 1701 classes and 265 folders.
+[2015.04.06-22.44.31:108][751]Recompiling FFMProject...
+[2015.04.06-22.44.31:108][751]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.7/Engine/Binaries/DotNET/UnrealBuildTool.exe FFMProject -ModuleWithSuffix FFMProject 4166 Win64 Development -editorrecompile -canskiplink "D:/Works/Unreal/FFMProject/FFMProject.uproject" -rocket  -rocket]
+[2015.04.06-22.44.31:109][751]Warning: Starting HotReload took  0.0s.
+[2015.04.06-22.44.41:285][614]CompilerResultsLog: New page: Compilation - Apr 7, 2015, 2:44:41 AM
+[2015.04.06-22.44.41:287][614]CompilerResultsLog: Info Parsing headers for FFMProjectEditor
+[2015.04.06-22.44.41:287][614]CompilerResultsLog: Info Reflection code generated for FFMProjectEditor
+[2015.04.06-22.44.41:287][614]CompilerResultsLog: Info Performing 3 actions (4 in parallel)
+[2015.04.06-22.44.41:287][614]CompilerResultsLog: Info BoxPrimitiveModel.cpp
+[2015.04.06-22.44.41:287][614]CompilerResultsLog: Info FFMProject.generated.cpp
+[2015.04.06-22.44.41:287][614]CompilerResultsLog:Error: Error d:\works\unreal\ffmproject\source\ffmproject\BoxPrimitiveModel.h(14)  : error C4430: missing type specifier - int assumed. Note: C++ does not support default-intD:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.h(14) : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+[2015.04.06-22.44.41:287][614]CompilerResultsLog: Info 
+[2015.04.06-22.44.41:287][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.h(14)  : error C4183: 'AProceduralCubeActor': missing return type; assumed to be a member function returning 'int'd:\works\unreal\ffmproject\source\ffmproject\BoxPrimitiveModel.h(14) : error C4183: 'AProceduralCubeActor': missing return type; assumed to be a member function returning 'int'
+[2015.04.06-22.44.41:287][614]CompilerResultsLog: Info 
+[2015.04.06-22.44.41:287][614]CompilerResultsLog:Error: Error d:\works\unreal\ffmproject\source\ffmproject\BoxPrimitiveModel.h(18)  : error C2143: syntax error : missing ';' before '*'D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.h(18) : error C2143: syntax error : missing ';' before '*'
+[2015.04.06-22.44.41:287][614]CompilerResultsLog: Info 
+[2015.04.06-22.44.41:287][614]CompilerResultsLog:Error: Error d:\works\unreal\ffmproject\source\ffmproject\BoxPrimitiveModel.h(18)  : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+[2015.04.06-22.44.41:287][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.h(18)  : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+[2015.04.06-22.44.41:287][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.h(20)  : error C2065: 'FProceduralMeshTriangle' : undeclared identifierd:\works\unreal\ffmproject\source\ffmproject\BoxPrimitiveModel.h(20) : error C2065: 'FProceduralMeshTriangle' : undeclared identifier
+[2015.04.06-22.44.41:287][614]CompilerResultsLog: Info 
+[2015.04.06-22.44.41:287][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.h(20)  : error C2923: 'TArray' : 'FProceduralMeshTriangle' is not a valid template type argument for parameter 'InElementType'
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error d:\works\unreal\ffmproject\source\ffmproject\BoxPrimitiveModel.h(20)  : error C2923: 'TArray' : 'FProceduralMeshTriangle' is not a valid template type argument for parameter 'InElementType'
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(6)  : error C2653: 'AProceduralCubeActor' : is not a class or namespace name
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(7)  : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(8)  : error C2065: 'mesh' : undeclared identifier
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(8)  : error C2065: 'CreateDefaultSubobject' : undeclared identifier
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(8)  : error C2065: 'UProceduralMeshComponent' : undeclared identifier
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(14)  : error C2065: 'mesh' : undeclared identifier
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(14)  : error C2227: left of '->SetMaterial' must point to class/struct/union/generic type
+[2015.04.06-22.44.41:288][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(17)  : error C2065: 'FProceduralMeshTriangle' : undeclared identifier
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(17)  : error C2923: 'TArray' : 'FProceduralMeshTriangle' is not a valid template type argument for parameter 'InElementType'
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(17)  : error C2133: 'triangles' : unknown size
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(17)  : error C2512: 'TArray' : no appropriate default constructor available
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(18)  : error C3861: 'GenerateCube': identifier not found
+[2015.04.06-22.44.41:288][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(19)  : error C2065: 'mesh' : undeclared identifier
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(19)  : error C2227: left of '->SetProceduralMeshTriangles' must point to class/struct/union/generic type
+[2015.04.06-22.44.41:289][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(21)  : error C2065: 'RootComponent' : undeclared identifier
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(21)  : error C2065: 'mesh' : undeclared identifier
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(22)  : error C4508: 'AProceduralCubeActor' : function should return a value; 'void' return type assumed
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(25)  : error C2653: 'AProceduralCubeActor' : is not a class or namespace name
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(25)  : error C2065: 'FProceduralMeshTriangle' : undeclared identifier
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(25)  : error C2923: 'TArray' : 'FProceduralMeshTriangle' is not a valid template type argument for parameter 'InElementType'
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(37)  : error C2065: 'FProceduralMeshVertex' : undeclared identifier
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(37)  : error C2146: syntax error : missing ';' before identifier 'v0'
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(37)  : error C2065: 'v0' : undeclared identifier
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(38)  : error C2065: 'FProceduralMeshVertex' : undeclared identifier
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(38)  : error C2146: syntax error : missing ';' before identifier 'v1'
+[2015.04.06-22.44.41:289][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(38)  : error C2065: 'v1' : undeclared identifier
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(39)  : error C2065: 'FProceduralMeshVertex' : undeclared identifier
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(39)  : error C2146: syntax error : missing ';' before identifier 'v2'
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(39)  : error C2065: 'v2' : undeclared identifier
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(40)  : error C2065: 'FProceduralMeshVertex' : undeclared identifier
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(40)  : error C2146: syntax error : missing ';' before identifier 'v3'
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(40)  : error C2065: 'v3' : undeclared identifier
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(41)  : error C2065: 'v0' : undeclared identifier
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(41)  : error C2228: left of '.U' must have class/struct/union
+[2015.04.06-22.44.41:290][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(41)  : error C2228: left of '.V' must have class/struct/union
+[2015.04.06-22.44.41:290][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(42)  : error C2065: 'v1' : undeclared identifier
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(42)  : error C2228: left of '.U' must have class/struct/union
+[2015.04.06-22.44.41:290][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(42)  : error C2228: left of '.V' must have class/struct/union
+[2015.04.06-22.44.41:290][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:290][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(43)  : error C2065: 'v2' : undeclared identifier
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(43)  : error C2228: left of '.U' must have class/struct/union
+[2015.04.06-22.44.41:291][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(43)  : error C2228: left of '.V' must have class/struct/union
+[2015.04.06-22.44.41:291][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(44)  : error C2065: 'v3' : undeclared identifier
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(44)  : error C2228: left of '.U' must have class/struct/union
+[2015.04.06-22.44.41:291][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(44)  : error C2228: left of '.V' must have class/struct/union
+[2015.04.06-22.44.41:291][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(46)  : error C2065: 'FProceduralMeshTriangle' : undeclared identifier
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(46)  : error C2146: syntax error : missing ';' before identifier 't1'
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(46)  : error C2065: 't1' : undeclared identifier
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(47)  : error C2065: 'FProceduralMeshTriangle' : undeclared identifier
+[2015.04.06-22.44.41:291][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(47)  : error C2146: syntax error : missing ';' before identifier 't2'
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(47)  : error C2065: 't2' : undeclared identifier
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(50)  : error C2065: 'v0' : undeclared identifier
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(50)  : error C2228: left of '.Position' must have class/struct/union
+[2015.04.06-22.44.41:292][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(51)  : error C2065: 'v1' : undeclared identifier
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(51)  : error C2228: left of '.Position' must have class/struct/union
+[2015.04.06-22.44.41:292][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(52)  : error C2065: 'v2' : undeclared identifier
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(52)  : error C2228: left of '.Position' must have class/struct/union
+[2015.04.06-22.44.41:292][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(53)  : error C2065: 'v3' : undeclared identifier
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(53)  : error C2228: left of '.Position' must have class/struct/union
+[2015.04.06-22.44.41:292][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(54)  : error C2065: 't1' : undeclared identifier
+[2015.04.06-22.44.41:292][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(54)  : error C2228: left of '.Vertex0' must have class/struct/union
+[2015.04.06-22.44.41:293][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(54)  : error C2065: 'v0' : undeclared identifier
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(55)  : error C2065: 't1' : undeclared identifier
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(55)  : error C2228: left of '.Vertex1' must have class/struct/union
+[2015.04.06-22.44.41:293][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(55)  : error C2065: 'v1' : undeclared identifier
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(56)  : error C2065: 't1' : undeclared identifier
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(56)  : error C2228: left of '.Vertex2' must have class/struct/union
+[2015.04.06-22.44.41:293][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(56)  : error C2065: 'v2' : undeclared identifier
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(57)  : error C2065: 't2' : undeclared identifier
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(57)  : error C2228: left of '.Vertex0' must have class/struct/union
+[2015.04.06-22.44.41:293][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(57)  : error C2065: 'v0' : undeclared identifier
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(58)  : error C2065: 't2' : undeclared identifier
+[2015.04.06-22.44.41:293][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(58)  : error C2228: left of '.Vertex1' must have class/struct/union
+[2015.04.06-22.44.41:293][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(58)  : error C2065: 'v2' : undeclared identifier
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(59)  : error C2065: 't2' : undeclared identifier
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(59)  : error C2228: left of '.Vertex2' must have class/struct/union
+[2015.04.06-22.44.41:294][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(59)  : error C2065: 'v3' : undeclared identifier
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(60)  : error C2065: 't1' : undeclared identifier
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(61)  : error C2065: 't2' : undeclared identifier
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(64)  : error C2065: 'v0' : undeclared identifier
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(64)  : error C2228: left of '.Position' must have class/struct/union
+[2015.04.06-22.44.41:294][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(65)  : error C2065: 'v1' : undeclared identifier
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(65)  : error C2228: left of '.Position' must have class/struct/union
+[2015.04.06-22.44.41:294][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(66)  : error C2065: 'v2' : undeclared identifier
+[2015.04.06-22.44.41:294][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(66)  : error C2228: left of '.Position' must have class/struct/union
+[2015.04.06-22.44.41:294][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(67)  : error C2065: 'v3' : undeclared identifier
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(67)  : error C2228: left of '.Position' must have class/struct/union
+[2015.04.06-22.44.41:295][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(68)  : error C2065: 't1' : undeclared identifier
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(68)  : error C2228: left of '.Vertex0' must have class/struct/union
+[2015.04.06-22.44.41:295][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(68)  : error C2065: 'v0' : undeclared identifier
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(69)  : error C2065: 't1' : undeclared identifier
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(69)  : error C2228: left of '.Vertex1' must have class/struct/union
+[2015.04.06-22.44.41:295][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(69)  : error C2065: 'v1' : undeclared identifier
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(70)  : error C2065: 't1' : undeclared identifier
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(70)  : error C2228: left of '.Vertex2' must have class/struct/union
+[2015.04.06-22.44.41:295][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(70)  : error C2065: 'v2' : undeclared identifier
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(71)  : error C2065: 't2' : undeclared identifier
+[2015.04.06-22.44.41:295][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(71)  : error C2228: left of '.Vertex0' must have class/struct/union
+[2015.04.06-22.44.41:296][614]CompilerResultsLog: Info         type is 'unknown-type'
+[2015.04.06-22.44.41:296][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(71)  : error C2065: 'v0' : undeclared identifier
+[2015.04.06-22.44.41:296][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(72)  : error C2065: 't2' : undeclared identifier
+[2015.04.06-22.44.41:296][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.cpp(72)  : fatal error C1003: error count exceeds 100; stopping compilation
+[2015.04.06-22.44.41:296][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Intermediate\Build\Win64\Inc\FFMProject\FFMProject.generated.cpp(99)  : error C2039: 'mesh' : is not a member of 'ABoxPrimitiveModel'
+[2015.04.06-22.44.41:296][614]CompilerResultsLog: Info          D:\Works\Unreal\FFMProject\Source\FFMProject\BoxPrimitiveModel.h(9)  : see declaration of 'ABoxPrimitiveModel'
+[2015.04.06-22.44.41:296][614]CompilerResultsLog:Error: Error D:\Works\Unreal\FFMProject\Intermediate\Build\Win64\Inc\FFMProject\FFMProject.generated.cpp(99)  : error C2661: 'UObjectProperty::UObjectProperty' : no overloaded function takes 4 arguments
+[2015.04.06-22.44.41:296][614]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.04.06-22.44.41:296][614]CompilerResultsLog: Info ERROR: UBT ERROR: Failed to produce item: D:\Works\Unreal\FFMProject\Binaries\Win64\UE4Editor-FFMProject-4166.dll
+[2015.04.06-22.44.41:296][614]CompilerResultsLog: Info Cumulative action seconds (8 processors): 0.00 building projects, 3.31 compiling, 0.00 creating app bundles, 0.00 generating debug info, 0.00 linking, 0.00 other
+[2015.04.06-22.44.41:296][614]CompilerResultsLog: Info UBT execution time: 9.83 seconds
+[2015.04.06-22.44.41:296][614]LogMainFrame: MainFrame: Module compiling took 10.198 seconds
+[2015.04.06-22.44.41:296][614]Warning: HotReload failed, recompile failed
+[2015.04.06-22.45.51:171][488]LogHotReload: New module detected: UE4Editor-FFMProject-4717.dll
+[2015.04.06-22.45.51:849][491]LogHotReload: Starting Hot-Reload from IDE
+[2015.04.06-22.45.51:928][491]LogClass: Could not find existing class BoxPrimitiveModel in package /Script/FFMProject for HotReload, assuming new class
+[2015.04.06-22.45.51:928][491]LogClass: ProceduralMeshVertex HotReload.
+[2015.04.06-22.45.51:928][491]LogClass: ProceduralMeshTriangle HotReload.
+[2015.04.06-22.45.51:928][491]LogLinker:Warning: Can't find file '/Game/Materials/BaseColor'
+[2015.04.06-22.45.51:929][491]LogLinker:Warning: Can't find file '/Game/Materials/BaseColor'
+[2015.04.06-22.45.51:939][491]LogUObjectGlobals:Warning: Failed to find object 'MaterialInterface /Game/Materials/BaseColor.BaseColor'
+[2015.04.06-22.45.51:939][491]Error: CDO Constructor (BoxPrimitiveModel): Failed to find Material'/Game/Materials/BaseColor.BaseColor'
+
+[2015.04.06-22.45.51:939][491]LogUObjectBase:Warning: -------------- Default Property warnings and errors:
+[2015.04.06-22.45.51:939][491]LogUObjectBase:Warning: Error: CDO Constructor (BoxPrimitiveModel): Failed to find Material'/Game/Materials/BaseColor.BaseColor'
+
+[2015.04.06-22.45.58:479][491]LogHotReload: Re-instancing BoxPrimitiveModel after hot-reload.
+[2015.04.06-22.45.58:553][491]LogContentBrowser: Native class hierarchy updated for 'FFMProject' in 0.0040 seconds. Added 4 classes and 2 folders.
+[2015.04.06-22.45.58:554][491]Warning: HotReload successful (3 functions remapped  2 scriptstructs remapped)
+[2015.04.06-22.45.58:572][491]LogContentBrowser: Native class hierarchy populated in 0.0098 seconds. Added 1701 classes and 265 folders.
+[2015.04.06-22.46.02:569][923]Recompiling FFMProject...
+[2015.04.06-22.46.02:569][923]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.7/Engine/Binaries/DotNET/UnrealBuildTool.exe FFMProject -ModuleWithSuffix FFMProject 3351 Win64 Development -editorrecompile -canskiplink "D:/Works/Unreal/FFMProject/FFMProject.uproject" -rocket  -rocket]
+[2015.04.06-22.46.02:570][923]Warning: Starting HotReload took  0.0s.
+[2015.04.06-22.46.04:862][162]CompilerResultsLog: New page: Compilation - Apr 7, 2015, 2:46:04 AM
+[2015.04.06-22.46.04:862][162]CompilerResultsLog: Info Target is up to date.
+[2015.04.06-22.46.04:862][162]LogMainFrame: MainFrame: Module compiling took 2.302 seconds
+[2015.04.06-22.46.11:138][905]LogEditor: Attempting to add actor of class 'BoxPrimitiveModel' to level at -220.00,300.00,-70.00
+[2015.04.06-22.46.11:163][905]LogPhysics:Warning: PHYSX: ..\..\PhysXExtensions\src\ExtRigidBodyExt.cpp (234) 4 : computeMassAndInertia: Dynamic actor with illegal collision shapes
+[2015.04.06-22.46.11:163][905]LogPhysics:Warning: PHYSX: ..\..\PhysXExtensions\src\ExtRigidBodyExt.cpp (283) 4 : PxRigidBodyExt::updateMassAndInertia: Mass and inertia computation failed, setting mass to 1 and inertia to (1,1,1)
+[2015.04.06-22.46.11:695][917]LogEditor: Attempting to add actor of class 'BoxPrimitiveModel' to level at -60.00,40.00,30.00
+[2015.04.06-22.46.11:711][917]LogPhysics:Warning: PHYSX: ..\..\PhysXExtensions\src\ExtRigidBodyExt.cpp (234) 4 : computeMassAndInertia: Dynamic actor with illegal collision shapes
+[2015.04.06-22.46.11:711][917]LogPhysics:Warning: PHYSX: ..\..\PhysXExtensions\src\ExtRigidBodyExt.cpp (283) 4 : PxRigidBodyExt::updateMassAndInertia: Mass and inertia computation failed, setting mass to 1 and inertia to (1,1,1)
+[2015.04.06-22.46.14:551][212]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2015.04.06-22.46.15:127][271]LogEditorViewport: Clicking on Actor (LMB): BoxPrimitiveModel (BoxPrimitiveModel1)
+[2015.04.06-22.46.17:005][492]Cmd: DELETE
+[2015.04.06-22.46.17:005][492]Cmd: ACTOR DELETE
+[2015.04.06-22.46.17:071][492]LogEditorActor: Deleted Actor: BoxPrimitiveModel
+[2015.04.06-22.46.17:089][492]LogEditorActor: Deleted 1 Actors (0.044 secs)
+[2015.04.06-22.46.17:939][593]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Floor)
+[2015.04.06-22.46.18:039][593]LogEditorViewport: Clicking on Component (context menu): StaticMeshComponent (StaticMeshComponent0)
+[2015.04.06-22.46.19:137][701]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2015.04.06-22.46.24:911][383]LogEditor: Attempting to add actor of class 'MainScene' to level at -170.00,220.00,-220.00
+[2015.04.06-22.46.25:460][445]LogEditor: Attempting to add actor of class 'MainScene' to level at -170.00,40.00,30.00
+[2015.04.06-22.46.36:833][694]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2015.04.06-22.46.38:617][871]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/StarterContent/Maps/Minimal_Default" FILE="D:/Works/Unreal/FFMProject/Content/StarterContent/Maps/Minimal_Default.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2015.04.06-22.46.38:709][871]LogSavePackage: Save=79.573753ms
+[2015.04.06-22.46.38:709][871]LogSavePackage: Moving 'D:/Works/Unreal/FFMProject/Saved/Minimal_Default1B2CD4354D65ECB87B30C5A9E53F4422.tmp' to 'D:/Works/Unreal/FFMProject/Content/StarterContent/Maps/Minimal_Default.umap'
+[2015.04.06-22.46.40:044][ 27]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2015.04.06-22.46.40:044][ 27]PIE: New page: PIE session: Minimal_Default (Apr 7, 2015, 2:46:40 AM)
+[2015.04.06-22.46.40:048][ 27]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003882s)
+[2015.04.06-22.46.40:049][ 27]LogPlayLevel: PIE: World Init took: (0.000786s)
+[2015.04.06-22.46.40:049][ 27]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/StarterContent/Maps/Minimal_Default.Minimal_Default to /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default (0.005093s)
+[2015.04.06-22.46.40:161][ 27]LogWorld: Game class is 'FFMProjectGameMode'
+[2015.04.06-22.46.40:221][ 27]LogAIModule: Creating AISystem for world Minimal_Default
+[2015.04.06-22.46.40:226][ 27]LogWorld: Bringing World /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default up for play (max tick rate 0) at 2015.04.07-00.46.40
+[2015.04.06-22.46.40:260][ 27]LogWorld: Bringing up level for play took: 0.038634
+[2015.04.06-22.46.40:303][ 27]PIE: Info Play in editor start time for /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default -0.602
+[2015.04.06-22.46.43:599][395]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000A5892909A0
+[2015.04.06-22.46.55:132][666]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2015.04.06-22.46.55:132][666]PIE: New page: PIE session: Minimal_Default (Apr 7, 2015, 2:46:55 AM)
+[2015.04.06-22.46.55:135][666]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003145s)
+[2015.04.06-22.46.55:136][666]LogPlayLevel: PIE: World Init took: (0.000622s)
+[2015.04.06-22.46.55:136][666]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/StarterContent/Maps/Minimal_Default.Minimal_Default to /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default (0.003959s)
+[2015.04.06-22.46.55:171][666]LogWorld: Game class is 'FFMProjectGameMode'
+[2015.04.06-22.46.55:173][666]LogAIModule: Creating AISystem for world Minimal_Default
+[2015.04.06-22.46.55:175][666]LogWorld: Bringing World /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default up for play (max tick rate 0) at 2015.04.07-00.46.55
+[2015.04.06-22.46.55:176][666]LogWorld: Bringing up level for play took: 0.002920
+[2015.04.06-22.46.55:178][666]PIE: Info Play in editor start time for /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default 0.273
+[2015.04.06-22.47.19:374][253]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000A598CDB880
+[2015.04.06-22.47.19:968][321]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2015.04.06-22.47.19:968][321]PIE: New page: PIE session: Minimal_Default (Apr 7, 2015, 2:47:19 AM)
+[2015.04.06-22.47.19:971][321]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003023s)
+[2015.04.06-22.47.19:972][321]LogPlayLevel: PIE: World Init took: (0.000741s)
+[2015.04.06-22.47.19:972][321]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/StarterContent/Maps/Minimal_Default.Minimal_Default to /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default (0.003906s)
+[2015.04.06-22.47.20:004][321]LogWorld: Game class is 'FFMProjectGameMode'
+[2015.04.06-22.47.20:006][321]LogAIModule: Creating AISystem for world Minimal_Default
+[2015.04.06-22.47.20:008][321]LogWorld: Bringing World /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default up for play (max tick rate 0) at 2015.04.07-00.47.20
+[2015.04.06-22.47.20:009][321]LogWorld: Bringing up level for play took: 0.002646
+[2015.04.06-22.47.20:011][321]PIE: Info Play in editor start time for /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default -0.894
+[2015.04.06-22.47.20:864][414]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000A598CD9F80
+[2015.04.06-22.47.21:672][506]Recompiling FFMProject...
+[2015.04.06-22.47.21:672][506]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.7/Engine/Binaries/DotNET/UnrealBuildTool.exe FFMProject -ModuleWithSuffix FFMProject 8826 Win64 Development -editorrecompile -canskiplink "D:/Works/Unreal/FFMProject/FFMProject.uproject" -rocket  -rocket]
+[2015.04.06-22.47.21:673][506]Warning: Starting HotReload took  0.0s.
+[2015.04.06-22.47.26:937][ 76]CompilerResultsLog: New page: Compilation - Apr 7, 2015, 2:47:26 AM
+[2015.04.06-22.47.26:938][ 76]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2015.04.06-22.47.26:938][ 76]CompilerResultsLog: Info MainScene.cpp
+[2015.04.06-22.47.26:938][ 76]CompilerResultsLog: Info [2/2] Link UE4Editor-FFMProject-8826.dll
+[2015.04.06-22.47.26:938][ 76]CompilerResultsLog: Info    Creating library D:\Works\Unreal\FFMProject\Intermediate\Build\Win64\FFMProjectEditor\Development\UE4Editor-FFMProject-8826.lib and object D:\Works\Unreal\FFMProject\Intermediate\Build\Win64\FFMProjectEditor\Development\UE4Editor-FFMProject-8826.exp
+[2015.04.06-22.47.26:938][ 76]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.04.06-22.47.26:938][ 76]CompilerResultsLog: Info Cumulative action seconds (8 processors): 0.00 building projects, 1.17 compiling, 0.00 creating app bundles, 0.00 generating debug info, 0.59 linking, 0.00 other
+[2015.04.06-22.47.26:938][ 76]CompilerResultsLog: Info UBT execution time: 5.14 seconds
+[2015.04.06-22.47.26:938][ 76]LogMainFrame: MainFrame: Module compiling took 5.275 seconds
+[2015.04.06-22.47.26:988][ 76]LogLinker:Warning: Can't find file '/Game/Materials/BaseColor'
+[2015.04.06-22.47.26:988][ 76]LogLinker:Warning: Can't find file '/Game/Materials/BaseColor'
+[2015.04.06-22.47.26:988][ 76]LogUObjectGlobals:Warning: Failed to find object 'MaterialInterface /Game/Materials/BaseColor.BaseColor'
+[2015.04.06-22.47.26:988][ 76]Error: CDO Constructor (BoxPrimitiveModel): Failed to find Material'/Game/Materials/BaseColor.BaseColor'
+
+[2015.04.06-22.47.26:995][ 76]LogLoad:Error: WorldContext requested with invalid context object.
+[2015.04.06-22.47.26:996][ 76]LogWindows:Error: Windows GetLastError: The operation completed successfully. (0)
+[2015.04.06-22.47.27:122][ 76]LogCrashTracker: 
+
+
+[2015.04.06-22.48.21:946][ 76]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Floor)
+[2015.04.06-22.48.22:157][ 76]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Floor)
+[2015.04.06-22.48.22:206][ 76]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2015.04.06-22.48.22:237][ 76]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Floor)
+[2015.04.06-22.48.22:286][ 76]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2015.04.06-22.48.22:317][ 76]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Floor)
+[2015.04.06-22.48.22:365][ 76]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Floor)
+[2015.04.06-22.48.22:410][ 76]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2015.04.06-22.48.22:441][ 76]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (StaticMeshComponent0)
+[2015.04.06-22.48.23:059][ 76]LogCrashTracker: 
+
+
+[2015.04.06-22.48.23:059][ 76]LogWindows: === Critical error: ===
+Assertion failed: false [File:D:\BuildFarm\buildmachine_++depot+UE4-Releases+4.7\Engine\Source\Runtime\Engine\Private\UnrealEngine.cpp] [Line: 9329] 
+
+
+
+KERNELBASE.dll!UnknownFunction (0x00007ffcd9768b9c) + 0 bytes [UnknownFile:0]
+UE4Editor-Core.dll!FOutputDeviceWindowsError::Serialize() (0x00007ffcba208074) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\private\windows\windowsplatformoutputdevices.cpp:95]
+UE4Editor-Core.dll!FOutputDevice::Logf__VA() (0x00007ffcba087878) + 159 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\private\misc\outputdevice.cpp:144]
+UE4Editor-Core.dll!FDebug::AssertFailed() (0x00007ffcba068b17) + 62 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\private\misc\outputdevice.cpp:224]
+UE4Editor-Engine.dll!HandleInvalidWorldContext() (0x00007ffcb7a0f738) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\engine\private\unrealengine.cpp:9332]
+UE4Editor-Engine.dll!UEngine::GetFirstLocalPlayerController() (0x00007ffcb7a04323) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\engine\private\unrealengine.cpp:1865]
+UE4Editor-FFMProject-8826.dll!AMainScene::AMainScene() (0x00007ffcbdd23d92) + 45 bytes [d:\works\unreal\ffmproject\source\ffmproject\mainscene.cpp:12]
+UE4Editor-CoreUObject.dll!StaticConstructObject() (0x00007ffcb9b03714) + 122 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\coreuobject\private\uobject\uobjectglobals.cpp:2237]
+UE4Editor-CoreUObject.dll!UClass::HotReloadPrivateStaticClass() (0x00007ffcb99bee1d) + 59 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\coreuobject\private\uobject\class.cpp:3397]
+UE4Editor-FFMProject-8826.dll!GetPrivateStaticClassBody<AMainScene>() (0x00007ffcbdd318ac) + 86 bytes [c:\program files\epic games\4.7\engine\source\runtime\coreuobject\public\uobject\class.h:2279]
+UE4Editor-FFMProject-8826.dll!TClassCompiledInDefer<AMainScene>::Register() (0x00007ffcbdd32df1) + 45 bytes [c:\program files\epic games\4.7\engine\source\runtime\coreuobject\public\uobject\uobjectbase.h:295]
+UE4Editor-CoreUObject.dll!UClassRegisterAllCompiledInClasses() (0x00007ffcb9b07ae0) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\coreuobject\private\uobject\uobjectbase.cpp:690]
+UE4Editor-CoreUObject.dll!ProcessNewlyLoadedUObjects() (0x00007ffcb9af9d4b) + 5 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\coreuobject\private\uobject\uobjectbase.cpp:808]
+UE4Editor-CoreUObject.dll!TBaseStaticDelegateInstance<void __cdecl(void)>::ExecuteIfSafe() (0x00007ffcb99a3c97) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\public\delegates\delegateinstancesimpl_variadics.inl:921]
+UE4Editor-Core.dll!TBaseMulticastDelegate<void>::Broadcast() (0x00007ffcb9f66fc5) + 11 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\public\delegates\delegatesignatureimpl_variadics.inl:1030]
+UE4Editor-Core.dll!FModuleManager::LoadModuleWithFailureReason() (0x00007ffcba113212) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\private\modules\modulemanager.cpp:359]
+UE4Editor-Core.dll!FModuleManager::LoadModule() (0x00007ffcba112808) + 50 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\private\modules\modulemanager.cpp:238]
+UE4Editor-HotReload.dll!FHotReloadModule::DoHotReloadInternal() (0x00007ffcacd74b48) + 44 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\developer\hotreload\private\hotreload.cpp:654]
+UE4Editor-HotReload.dll!FHotReloadModule::DoHotReloadCallback() (0x00007ffcacd73dbd) + 77 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\developer\hotreload\private\hotreload.cpp:620]
+UE4Editor-HotReload.dll!TBaseRawMethodDelegateInstance<0,FHotReloadModule,TTypeWrapper<void> __cdecl(bool,enum ECompilationResult::Type),TArray<UPackage * __ptr64,FDefaultAllocator>,TArray<FName,FDefaultAllocator>,FOutputDevice & __ptr64>::Execute() (0x00007ffcacd76697) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\public\delegates\delegateinstancesimpl_variadics.inl:492]
+UE4Editor-HotReload.dll!TBaseRawMethodDelegateInstance<0,FHotReloadModule,void __cdecl(bool,enum ECompilationResult::Type),TArray<UPackage * __ptr64,FDefaultAllocator>,TArray<FName,FDefaultAllocator>,FOutputDevice & __ptr64>::ExecuteIfSafe() (0x00007ffcacd76809) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\core\public\delegates\delegateinstancesimpl_variadics.inl:582]
+UE4Editor-HotReload.dll!FHotReloadModule::CheckForFinishedModuleDLLCompile() (0x00007ffcacd72998) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\developer\hotreload\private\hotreload.cpp:1473]
+UE4Editor-HotReload.dll!FHotReloadModule::Tick() (0x00007ffcacd82d2a) + 32 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\developer\hotreload\private\hotreload.cpp:433]
+UE4Editor-UnrealEd.dll!UEditorEngine::Tick() (0x00007ffcb547d1be) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\editor\unrealed\private\editor.cpp:946]
+UE4Editor-UnrealEd.dll!UUnrealEdEngine::Tick() (0x00007ffcb5938306) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\editor\unrealed\private\unrealedengine.cpp:347]
+UE4Editor.exe!FEngineLoop::Tick() (0x00007ff6952c0263) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\launch\private\launchengineloop.cpp:2257]
+UE4Editor.exe!GuardedMain() (0x00007ff6952b267c) + 0 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\launch\private\launch.cpp:142]
+UE4Editor.exe!GuardedMainWrapper() (0x00007ff6952b26ea) + 5 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\launch\private\windows\launchwindows.cpp:126]
+UE4Editor.exe!WinMain() (0x00007ff6952c2219) + 17 bytes [d:\buildfarm\buildmachine_++depot+ue4-releases+4.7\engine\source\runtime\launch\private\windows\launchwindows.cpp:202]
+UE4Editor.exe!__tmainCRTStartup() (0x00007ff6952c3159) + 21 bytes [f:\dd\vctools\crt\crtw32\dllstuff\crtexe.c:618]
+KERNEL32.DLL!UnknownFunction (0x00007ffcdb7a13d2) + 0 bytes [UnknownFile:0]
+ntdll.dll!UnknownFunction (0x00007ffcdc4be954) + 0 bytes [UnknownFile:0]
+ntdll.dll!UnknownFunction (0x00007ffcdc4be954) + 0 bytes [UnknownFile:0]
+
+
+[2015.04.06-22.48.23:167][ 76]LogExit: Executing StaticShutdownAfterError
+[2015.04.06-22.48.23:632][ 76]LogWindows: FPlatformMisc::RequestExit(1)
+[2015.04.06-22.48.23:632][ 76]Log file closed, 04/07/15 00:48:23

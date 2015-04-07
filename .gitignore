@@ -1,0 +1,8 @@
+*.dll
+Binaries
+Intermediate
+*.sln
+*.sdf
+*.suo
+*.opensdf
+*.sdf
