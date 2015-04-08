@@ -87,7 +87,6 @@ void AMyDefaultPawn::OnMouseLeftButtonUp()
 {
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("LMB Up"));
-	PlaceCube();
 }
 
 FVector2D AMyDefaultPawn::GetScreenPos()
