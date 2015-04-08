@@ -18,7 +18,13 @@ public:
 	void BeginPlay() override;
 
 public:
-	void Manipulate();
+	void PlaceCube();
 	APlayerController* GetController();
+	FVector2D GetScreenPos();
 
+private:
+
+	void OnMouseMove( float val );
+	void OnMouseLeftButtonDown();
+	void OnMouseLeftButtonUp();
 };

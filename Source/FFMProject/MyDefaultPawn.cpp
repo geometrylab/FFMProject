@@ -7,7 +7,6 @@
 AMyDefaultPawn::AMyDefaultPawn(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
 	PrimaryActorTick.bCanEverTick = true;
-	AutoPossessPlayer = EAutoReceiveInput::Player0;
 }
 
 void AMyDefaultPawn::BeginPlay()
@@ -20,10 +19,18 @@ void AMyDefaultPawn::BeginPlay()
 void AMyDefaultPawn::SetupPlayerInputComponent(UInputComponent* InputComponent)
 {
 	Super::SetupPlayerInputComponent(InputComponent);
-	InputComponent->BindAction("Manipulate", IE_Pressed, this, &AMyDefaultPawn::Manipulate);
+
+	UPlayerInput::AddEngineDefinedAxisMapping(FInputAxisKeyMapping("MoveCursorX", EKeys::MouseX, 1.f));
+	UPlayerInput::AddEngineDefinedAxisMapping(FInputAxisKeyMapping("MoveCursorY", EKeys::MouseY, -1.f));
+	UPlayerInput::AddEngineDefinedActionMapping(FInputActionKeyMapping("LMB", EKeys::LeftMouseButton));
+
+	InputComponent->BindAction("LMB", IE_Pressed, this, &AMyDefaultPawn::OnMouseLeftButtonDown);
+	InputComponent->BindAction("LMB", IE_Released, this, &AMyDefaultPawn::OnMouseLeftButtonUp);
+	InputComponent->BindAxis("MoveCursorX", this, &AMyDefaultPawn::OnMouseMove);
+	InputComponent->BindAxis("MoveCursorY", this, &AMyDefaultPawn::OnMouseMove);
 }
 
-void AMyDefaultPawn::Manipulate()
+void AMyDefaultPawn::PlaceCube()
 {
 	if (!GetController())
 		return;
@@ -44,7 +51,7 @@ void AMyDefaultPawn::Manipulate()
 		{
 			if (hitResults[i].bBlockingHit)
 			{
-				if (GEngine)
+				if( GEngine )
 					GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Hit!!!!"));
 				GetWorld()->SpawnActor<ABoxPrimitiveModel>(hitResults[i].Location, FRotator::ZeroRotator);
 			}
@@ -58,4 +65,39 @@ APlayerController* AMyDefaultPawn::GetController()
 		return NULL;
 
 	return GEngine->GetFirstLocalPlayerController(GetWorld());
+}
+
+void AMyDefaultPawn::OnMouseMove(float val)
+{
+	if (GEngine)
+	{
+		FVector2D screenPos = GetScreenPos();
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, screenPos.ToString());
+	}
+}
+
+void AMyDefaultPawn::OnMouseLeftButtonDown()
+{
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("LMB Down"));
+	PlaceCube();
+}
+
+void AMyDefaultPawn::OnMouseLeftButtonUp()
+{
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("LMB Up"));
+	PlaceCube();
+}
+
+FVector2D AMyDefaultPawn::GetScreenPos()
+{
+	ULocalPlayer* LocalPlayer = Cast<ULocalPlayer>(GetController()->Player);
+	if (LocalPlayer && LocalPlayer->ViewportClient)
+	{
+		FVector2D ScreenPosition;
+		if (LocalPlayer->ViewportClient->GetMousePosition(ScreenPosition))
+			return ScreenPosition;
+	}
+	return FVector2D(-1.0f, -1.0f);
 }
