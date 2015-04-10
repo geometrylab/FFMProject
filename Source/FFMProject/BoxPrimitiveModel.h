@@ -3,7 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
-#include "ProceduralMeshComponent.h"
+#include "Geometry/ProceduralMeshComponent.h"
 #include "BoxPrimitiveModel.generated.h"
 
 UCLASS()
