@@ -8,7 +8,7 @@ ABoxPrimitiveModel::ABoxPrimitiveModel()
 	mesh = CreateDefaultSubobject<UBrushMesh>(TEXT("CubeMesh"));
 
 	// Generate a cube
-	TArray<FProceduralMeshTriangle> triangles;
+	TArray<FBrushTriangle> triangles;
 	GenerateCube(60.0f, triangles);
 	mesh->SetProceduralMeshTriangles(triangles);
 
@@ -16,7 +16,7 @@ ABoxPrimitiveModel::ABoxPrimitiveModel()
 }
 
 // Generate a full cube
-void ABoxPrimitiveModel::GenerateCube(const float& InSize, TArray<FProceduralMeshTriangle>& OutTriangles)
+void ABoxPrimitiveModel::GenerateCube(const float& InSize, TArray<FBrushTriangle>& OutTriangles)
 {
 	// The 8 vertices of the cube
 	FVector p0 = FVector(0.f, 0.f, 0.f);
@@ -28,17 +28,17 @@ void ABoxPrimitiveModel::GenerateCube(const float& InSize, TArray<FProceduralMes
 	FVector p6 = FVector(0.f, InSize, InSize);
 	FVector p7 = FVector(0.f, InSize, 0.f);
 
-	FProceduralMeshVertex v0;
-	FProceduralMeshVertex v1;
-	FProceduralMeshVertex v2;
-	FProceduralMeshVertex v3;
+	FBrushVertex v0;
+	FBrushVertex v1;
+	FBrushVertex v2;
+	FBrushVertex v3;
 	v0.U = 0.f; v0.V = 0.f;
 	v1.U = 0.f; v1.V = 1.f;
 	v2.U = 1.f; v2.V = 1.f;
 	v3.U = 1.f; v3.V = 0.f;
 
-	FProceduralMeshTriangle t1;
-	FProceduralMeshTriangle t2;
+	FBrushTriangle t1;
+	FBrushTriangle t2;
 
 	// front face
 	v0.Position = p0;

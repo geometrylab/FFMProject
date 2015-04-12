@@ -72,7 +72,6 @@ void AEditTool::OnMouseMove(float val)
 	if (GEngine)
 	{
 		FVector2D screenPos = GetScreenPos();
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, screenPos.ToString());
 	}
 }
 

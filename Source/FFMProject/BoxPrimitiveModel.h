@@ -19,5 +19,5 @@ public:
     
     UBrushMesh* mesh;
 
-	void GenerateCube(const float& InSize, TArray<FProceduralMeshTriangle>& OutTriangles);
+	void GenerateCube(const float& InSize, TArray<FBrushTriangle>& OutTriangles);
 };

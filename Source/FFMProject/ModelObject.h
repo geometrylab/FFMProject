@@ -4,7 +4,7 @@
 
 #include "GameFramework/Actor.h"
 #include "Geometry/Model.h"
-#include "Geometry/Brush.h"
+#include "Geometry/BrushMesh.h"
 #include "ModelObject.generated.h"
 
 UCLASS()
@@ -25,5 +25,5 @@ public:
 private:
     
     FFMGeometry::ModelPtr m_pModel;
-    FFMGeometry::BrushPtr m_pBrush;
+    UBrushMesh* m_pBrushMesh;
 };

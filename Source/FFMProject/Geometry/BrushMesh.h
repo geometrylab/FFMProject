@@ -6,36 +6,18 @@
 
 #include "BrushMesh.generated.h"
 
-USTRUCT(BlueprintType)
 struct FBrushVertex
 {
-	GENERATED_USTRUCT_BODY()
-
-	UPROPERTY(EditAnywhere, Category = Triangle)
 	FVector Position;
-
-	UPROPERTY(EditAnywhere, Category = Triangle)
 	FColor Color;
-
-	UPROPERTY(EditAnywhere, Category = Triangle)
 	float U;
-
-	UPROPERTY(EditAnywhere, Category = Triangle)
 	float V;
 };
 
-USTRUCT(BlueprintType)
 struct FBrushTriangle
 {
-	GENERATED_USTRUCT_BODY()
-
-	UPROPERTY(EditAnywhere, Category = Triangle)
 	FBrushVertex Vertex0;
-
-	UPROPERTY(EditAnywhere, Category = Triangle)
 	FBrushVertex Vertex1;
-
-	UPROPERTY(EditAnywhere, Category = Triangle)
 	FBrushVertex Vertex2;
 };
 
@@ -46,21 +28,9 @@ class UBrushMesh : public UMeshComponent, public IInterface_CollisionDataProvide
 	GENERATED_UCLASS_BODY()
 
 public:
-	/** Set the geometry to use on this triangle mesh */
-	UFUNCTION(BlueprintCallable, Category = "Components|ProceduralMesh")
 	bool SetProceduralMeshTriangles(const TArray<FBrushTriangle>& Triangles);
-
-
-	/** Add to the geometry to use on this triangle mesh.  This may cause an allocation.  Use SetCustomMeshTriangles() instead when possible to reduce allocations. */
-	UFUNCTION(BlueprintCallable, Category = "Components|ProceduralMesh")
 	void AddProceduralMeshTriangles(const TArray<FBrushTriangle>& Triangles);
-
-	/** Removes all geometry from this triangle mesh.  Does not deallocate memory, allowing new geometry to reuse the existing allocation. */
-	UFUNCTION(BlueprintCallable, Category = "Components|ProceduralMesh")
 	void ClearProceduralMeshTriangles();
-
-	/** Description of collision */
-	UPROPERTY(BlueprintReadOnly, Category = "Collision")
 	class UBodySetup* ModelBodySetup;
 
 	// Begin Interface_CollisionDataProvider Interface
@@ -89,5 +59,5 @@ private:
 	/** */
 	TArray<FBrushTriangle> ProceduralMeshTris;
 
-	friend class FProceduralMeshSceneProxy;
+	friend class FBrushSceneProxy;
 };
