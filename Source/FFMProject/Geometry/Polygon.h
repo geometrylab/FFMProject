@@ -1,5 +1,7 @@
 #pragma once
 
+#include "GeometryCommon.h"
+
 namespace FFMGeometry
 {
 
@@ -11,7 +13,7 @@ public:
 public:
 
 	Polygon();
-	Polygon(TArray<FVector>& vertices, TArray<Edge>& edges);
+	Polygon(TArray<FVector>& vertices, TArray<FFMGeometry::Edge>& edges);
 	Polygon(TArray<FVector>& vertices);
 
 private:

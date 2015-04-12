@@ -1,5 +1,4 @@
 #include "FFMProject.h"
-#include "GeometryCommon.h"
 #include "Polygon.h"
 
 namespace FFMGeometry

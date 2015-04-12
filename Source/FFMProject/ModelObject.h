@@ -3,9 +3,9 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
-#include "ModelObjet.generated.h"
 #include "Geometry/Model.h"
 #include "Geometry/Brush.h"
+#include "ModelObject.generated.h"
 
 UCLASS()
 class FFMPROJECT_API AModelObject : public AActor

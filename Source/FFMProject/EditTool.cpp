@@ -4,19 +4,19 @@
 #include "EditTool.h"
 #include "BoxPrimitiveModel.h"
 
-EditTool::EditTool(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+AEditTool::AEditTool(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
 	PrimaryActorTick.bCanEverTick = true;
 }
 
-void EditTool::BeginPlay()
+void AEditTool::BeginPlay()
 {
 	Super::BeginPlay();
 	if (GetController())
 		GetController()->bShowMouseCursor = true;
 }
 
-void EditTool::SetupPlayerInputComponent(UInputComponent* InputComponent)
+void AEditTool::SetupPlayerInputComponent(UInputComponent* InputComponent)
 {
 	Super::SetupPlayerInputComponent(InputComponent);
 
@@ -24,13 +24,13 @@ void EditTool::SetupPlayerInputComponent(UInputComponent* InputComponent)
 	UPlayerInput::AddEngineDefinedAxisMapping(FInputAxisKeyMapping("MoveCursorY", EKeys::MouseY, -1.f));
 	UPlayerInput::AddEngineDefinedActionMapping(FInputActionKeyMapping("LMB", EKeys::LeftMouseButton));
 
-	InputComponent->BindAction("LMB", IE_Pressed, this, &EditTool::OnMouseLeftButtonDown);
-	InputComponent->BindAction("LMB", IE_Released, this, &EditTool::OnMouseLeftButtonUp);
-	InputComponent->BindAxis("MoveCursorX", this, &EditTool::OnMouseMove);
-	InputComponent->BindAxis("MoveCursorY", this, &EditTool::OnMouseMove);
+	InputComponent->BindAction("LMB", IE_Pressed, this, &AEditTool::OnMouseLeftButtonDown);
+	InputComponent->BindAction("LMB", IE_Released, this, &AEditTool::OnMouseLeftButtonUp);
+	InputComponent->BindAxis("MoveCursorX", this, &AEditTool::OnMouseMove);
+	InputComponent->BindAxis("MoveCursorY", this, &AEditTool::OnMouseMove);
 }
 
-void EditTool::PlaceCube()
+void AEditTool::PlaceCube()
 {
 	if (!GetController())
 		return;
@@ -59,7 +59,7 @@ void EditTool::PlaceCube()
 	}
 }
 
-APlayerController* EditTool::GetController()
+APlayerController* AEditTool::GetController()
 {
 	if (!GEngine)
 		return NULL;
@@ -67,7 +67,7 @@ APlayerController* EditTool::GetController()
 	return GEngine->GetFirstLocalPlayerController(GetWorld());
 }
 
-void EditTool::OnMouseMove(float val)
+void AEditTool::OnMouseMove(float val)
 {
 	if (GEngine)
 	{
@@ -76,20 +76,20 @@ void EditTool::OnMouseMove(float val)
 	}
 }
 
-void EditTool::OnMouseLeftButtonDown()
+void AEditTool::OnMouseLeftButtonDown()
 {
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("LMB Down"));
 	PlaceCube();
 }
 
-void EditTool::OnMouseLeftButtonUp()
+void AEditTool::OnMouseLeftButtonUp()
 {
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("LMB Up"));
 }
 
-FVector2D EditTool::GetScreenPos()
+FVector2D AEditTool::GetScreenPos()
 {
 	ULocalPlayer* LocalPlayer = Cast<ULocalPlayer>(GetController()->Player);
 	if (LocalPlayer && LocalPlayer->ViewportClient)

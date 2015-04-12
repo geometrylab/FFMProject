@@ -6,13 +6,13 @@
 #include "EditTool.generated.h"
 
 UCLASS()
-class FFMPROJECT_API EditTool : public ADefaultPawn
+class FFMPROJECT_API AEditTool : public ADefaultPawn
 {
 	GENERATED_BODY()
 
 public:
 
-	EditTool(const FObjectInitializer& ObjectInitializer);
+	AEditTool(const FObjectInitializer& ObjectInitializer);
 
 	void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	void BeginPlay() override;
