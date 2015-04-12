@@ -16,4 +16,6 @@ private:
 	TArray<PolygonPtr> m_Polygons;
 };
 
+typedef TSharedPtr<Model> ModelPtr;
+
 }

@@ -3,16 +3,16 @@
 #pragma once
 
 #include "GameFramework/DefaultPawn.h"
-#include "MyDefaultPawn.generated.h"
+#include "EditTool.generated.h"
 
 UCLASS()
-class FFMPROJECT_API AMyDefaultPawn : public ADefaultPawn
+class FFMPROJECT_API EditTool : public ADefaultPawn
 {
 	GENERATED_BODY()
 
 public:
 
-	AMyDefaultPawn(const FObjectInitializer& ObjectInitializer);
+	EditTool(const FObjectInitializer& ObjectInitializer);
 
 	void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	void BeginPlay() override;

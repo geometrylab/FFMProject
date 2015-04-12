@@ -12,3 +12,41 @@ Saved/Autosaves/PackageRestoreData.json
 Saved/Autosaves/PackageRestoreData.json
 Saved/Config/Windows/EditorUserSettings.ini
 Saved/Logs/FFMProject.log
+FFMProject.xcodeproj
+*.xcworkspacedata
+
+FFMProject.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+
+*.xccheckout
+
+FFMProject.xcodeproj/project.xcworkspace/xcshareddata/FFMProject.xccheckout
+
+FFMProject.xcodeproj/project.xcworkspace/xcuserdata/jaesikhwang1.xcuserdatad/UserInterfaceState.xcuserstate
+
+FFMProject.xcodeproj/project.pbxproj
+
+FFMProject.xcodeproj/project.xcworkspace/xcuserdata/jaesikhwang1.xcuserdatad/WorkspaceSettings.xcsettings
+
+FFMProject.xcodeproj/xcuserdata/jaesikhwang1.xcuserdatad/xcschemes/FFMProject - iOS.xcscheme
+
+FFMProject.xcodeproj/xcuserdata/jaesikhwang1.xcuserdatad/xcschemes/FFMProject - Mac.xcscheme
+
+FFMProject.xcodeproj/xcuserdata/jaesikhwang1.xcuserdatad/xcschemes/FFMProjectEditor - Mac.xcscheme
+
+FFMProject.xcodeproj/xcuserdata/jaesikhwang1.xcuserdatad/xcschemes/UE4CmdLineRun.xcscheme
+
+FFMProject.xcodeproj/xcuserdata/jaesikhwang1.xcuserdatad/xcschemes/UE4Game - iOS.xcscheme
+
+FFMProject.xcodeproj/xcuserdata/jaesikhwang1.xcuserdatad/xcschemes/UE4Game - Mac.xcscheme
+
+FFMProject.xcodeproj/xcuserdata/jaesikhwang1.xcuserdatad/xcschemes/UE4XcodeHelper.xcscheme
+
+FFMProject.xcodeproj/xcuserdata/jaesikhwang1.xcuserdatad/xcschemes/xcschememanagement.plist
+
+Saved/Autosaves/Game/StarterContent/Maps/Minimal_Default_Auto1.umap
+
+Saved/Autosaves/PackageRestoreData.json
+
+Saved/AutoScreenshot.png
+
+Saved/Autosaves/Game/StarterContent/Maps/Minimal_Default_Auto1.umap

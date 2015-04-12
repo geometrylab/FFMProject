@@ -10,7 +10,9 @@ class Brush
 
 private:
 
-	TSharedPtr<UProceduralMeshComponent> m_pMesh;
+    UProceduralMeshComponent* m_pMesh;
 };
+    
+typedef TSharedPtr<Brush> BrushPtr;
 
 }

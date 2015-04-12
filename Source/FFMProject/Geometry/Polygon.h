@@ -6,7 +6,6 @@ namespace FFMGeometry
 class Polygon
 {
 public:
-
 	typedef TSharedPtr<Polygon> PolygonPtr;
 
 public:
