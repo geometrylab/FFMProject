@@ -4,10 +4,10 @@
 
 #pragma once
 
-#include "ProceduralMeshComponent.generated.h"
+#include "BrushMesh.generated.h"
 
 USTRUCT(BlueprintType)
-struct FProceduralMeshVertex
+struct FBrushVertex
 {
 	GENERATED_USTRUCT_BODY()
 
@@ -25,35 +25,35 @@ struct FProceduralMeshVertex
 };
 
 USTRUCT(BlueprintType)
-struct FProceduralMeshTriangle
+struct FBrushTriangle
 {
 	GENERATED_USTRUCT_BODY()
 
 	UPROPERTY(EditAnywhere, Category = Triangle)
-	FProceduralMeshVertex Vertex0;
+	FBrushVertex Vertex0;
 
 	UPROPERTY(EditAnywhere, Category = Triangle)
-	FProceduralMeshVertex Vertex1;
+	FBrushVertex Vertex1;
 
 	UPROPERTY(EditAnywhere, Category = Triangle)
-	FProceduralMeshVertex Vertex2;
+	FBrushVertex Vertex2;
 };
 
 /** Component that allows you to specify custom triangle mesh geometry */
 UCLASS(editinlinenew, meta = (BlueprintSpawnableComponent), ClassGroup = Rendering)
-class UProceduralMeshComponent : public UMeshComponent, public IInterface_CollisionDataProvider
+class UBrushMesh : public UMeshComponent, public IInterface_CollisionDataProvider
 {
 	GENERATED_UCLASS_BODY()
 
 public:
 	/** Set the geometry to use on this triangle mesh */
 	UFUNCTION(BlueprintCallable, Category = "Components|ProceduralMesh")
-	bool SetProceduralMeshTriangles(const TArray<FProceduralMeshTriangle>& Triangles);
+	bool SetProceduralMeshTriangles(const TArray<FBrushTriangle>& Triangles);
 
 
 	/** Add to the geometry to use on this triangle mesh.  This may cause an allocation.  Use SetCustomMeshTriangles() instead when possible to reduce allocations. */
 	UFUNCTION(BlueprintCallable, Category = "Components|ProceduralMesh")
-	void AddProceduralMeshTriangles(const TArray<FProceduralMeshTriangle>& Triangles);
+	void AddProceduralMeshTriangles(const TArray<FBrushTriangle>& Triangles);
 
 	/** Removes all geometry from this triangle mesh.  Does not deallocate memory, allowing new geometry to reuse the existing allocation. */
 	UFUNCTION(BlueprintCallable, Category = "Components|ProceduralMesh")
@@ -87,7 +87,7 @@ private:
 	// Begin USceneComponent interface.
 
 	/** */
-	TArray<FProceduralMeshTriangle> ProceduralMeshTris;
+	TArray<FBrushTriangle> ProceduralMeshTris;
 
 	friend class FProceduralMeshSceneProxy;
 };

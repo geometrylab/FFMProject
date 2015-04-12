@@ -4,11 +4,11 @@
 
 #include "FFMProject.h"
 #include "DynamicMeshBuilder.h"
-#include "ProceduralMeshComponent.h"
+#include "BrushMesh.h"
 #include "Runtime/Launch/Resources/Version.h"
 
 /** Vertex Buffer */
-class FProceduralMeshVertexBuffer : public FVertexBuffer
+class FBrushVertexBuffer : public FVertexBuffer
 {
 public:
 	TArray<FDynamicMeshVertex> Vertices;
@@ -25,7 +25,7 @@ public:
 };
 
 /** Index Buffer */
-class FProceduralMeshIndexBuffer : public FIndexBuffer
+class FBrushIndexBuffer : public FIndexBuffer
 {
 public:
 	TArray<int32> Indices;
@@ -42,23 +42,23 @@ public:
 };
 
 /** Vertex Factory */
-class FProceduralMeshVertexFactory : public FLocalVertexFactory
+class FBrushVertexFactory : public FLocalVertexFactory
 {
 public:
-	FProceduralMeshVertexFactory()
+	FBrushVertexFactory()
 	{
 	}
 
 	/** Initialization */
-	void Init(const FProceduralMeshVertexBuffer* VertexBuffer)
+	void Init(const FBrushVertexBuffer* VertexBuffer)
 	{
 		// Commented out to enable building light of a level (but no backing is done for the procedural mesh itself)
 		//check(!IsInRenderingThread());
 
 		ENQUEUE_UNIQUE_RENDER_COMMAND_TWOPARAMETER(
 			InitProceduralMeshVertexFactory,
-			FProceduralMeshVertexFactory*, VertexFactory, this,
-			const FProceduralMeshVertexBuffer*, VertexBuffer, VertexBuffer,
+			FBrushVertexFactory*, VertexFactory, this,
+			const FBrushVertexBuffer*, VertexBuffer, VertexBuffer,
 			{
 				// Initialize the vertex factory's stream components.
 				DataType NewData;
@@ -77,18 +77,18 @@ public:
 
 
 /** Scene proxy */
-class FProceduralMeshSceneProxy : public FPrimitiveSceneProxy
+class FBrushSceneProxy : public FPrimitiveSceneProxy
 {
 public:
 
-	FProceduralMeshSceneProxy(UProceduralMeshComponent* Component)
+	FBrushSceneProxy(UBrushMesh* Component)
 		: FPrimitiveSceneProxy(Component)
 		, MaterialRelevance(Component->GetMaterialRelevance(GetScene().GetFeatureLevel()))
 	{
 		// Add each triangle to the vertex/index buffer
 		for (int TriIdx = 0; TriIdx < Component->ProceduralMeshTris.Num(); TriIdx++)
 		{
-			FProceduralMeshTriangle& Tri = Component->ProceduralMeshTris[TriIdx];
+			FBrushTriangle& Tri = Component->ProceduralMeshTris[TriIdx];
 
 			const FVector Edge01 = (Tri.Vertex1.Position - Tri.Vertex0.Position);
 			const FVector Edge02 = (Tri.Vertex2.Position - Tri.Vertex0.Position);
@@ -138,7 +138,7 @@ public:
 		}
 	}
 
-	virtual ~FProceduralMeshSceneProxy()
+	virtual ~FBrushSceneProxy()
 	{
 		VertexBuffer.ReleaseResource();
 		IndexBuffer.ReleaseResource();
@@ -261,9 +261,9 @@ public:
 private:
 
 	UMaterialInterface* Material;
-	FProceduralMeshVertexBuffer VertexBuffer;
-	FProceduralMeshIndexBuffer IndexBuffer;
-	FProceduralMeshVertexFactory VertexFactory;
+	FBrushVertexBuffer VertexBuffer;
+	FBrushIndexBuffer IndexBuffer;
+	FBrushVertexFactory VertexFactory;
 
 	FMaterialRelevance MaterialRelevance;
 };
@@ -271,7 +271,7 @@ private:
 
 //////////////////////////////////////////////////////////////////////////
 
-UProceduralMeshComponent::UProceduralMeshComponent(const FObjectInitializer& ObjectInitializer)
+UBrushMesh::UBrushMesh(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 	PrimaryComponentTick.bCanEverTick = false;
@@ -279,7 +279,7 @@ UProceduralMeshComponent::UProceduralMeshComponent(const FObjectInitializer& Obj
 	SetCollisionProfileName(UCollisionProfile::BlockAllDynamic_ProfileName);
 }
 
-bool UProceduralMeshComponent::SetProceduralMeshTriangles(const TArray<FProceduralMeshTriangle>& Triangles)
+bool UBrushMesh::SetProceduralMeshTriangles(const TArray<FBrushTriangle>& Triangles)
 {
 	ProceduralMeshTris = Triangles;
 
@@ -291,7 +291,7 @@ bool UProceduralMeshComponent::SetProceduralMeshTriangles(const TArray<FProcedur
 	return true;
 }
 
-void UProceduralMeshComponent::AddProceduralMeshTriangles(const TArray<FProceduralMeshTriangle>& Triangles)
+void UBrushMesh::AddProceduralMeshTriangles(const TArray<FBrushTriangle>& Triangles)
 {
 	ProceduralMeshTris.Append(Triangles);
 
@@ -299,7 +299,7 @@ void UProceduralMeshComponent::AddProceduralMeshTriangles(const TArray<FProcedur
 	MarkRenderStateDirty();
 }
 
-void  UProceduralMeshComponent::ClearProceduralMeshTriangles()
+void  UBrushMesh::ClearProceduralMeshTriangles()
 {
 	ProceduralMeshTris.Reset();
 
@@ -308,24 +308,24 @@ void  UProceduralMeshComponent::ClearProceduralMeshTriangles()
 }
 
 
-FPrimitiveSceneProxy* UProceduralMeshComponent::CreateSceneProxy()
+FPrimitiveSceneProxy* UBrushMesh::CreateSceneProxy()
 {
 	FPrimitiveSceneProxy* Proxy = NULL;
 	// Only if have enough triangles
 	if (ProceduralMeshTris.Num() > 0)
 	{
-		Proxy = new FProceduralMeshSceneProxy(this);
+		Proxy = new FBrushSceneProxy(this);
 	}
 	return Proxy;
 }
 
-int32 UProceduralMeshComponent::GetNumMaterials() const
+int32 UBrushMesh::GetNumMaterials() const
 {
 	return 1;
 }
 
 
-FBoxSphereBounds UProceduralMeshComponent::CalcBounds(const FTransform & LocalToWorld) const
+FBoxSphereBounds UBrushMesh::CalcBounds(const FTransform & LocalToWorld) const
 {
 	// Only if have enough triangles
 	if (ProceduralMeshTris.Num() > 0)
@@ -375,13 +375,13 @@ FBoxSphereBounds UProceduralMeshComponent::CalcBounds(const FTransform & LocalTo
 }
 
 
-bool UProceduralMeshComponent::GetPhysicsTriMeshData(struct FTriMeshCollisionData* CollisionData, bool InUseAllTriData)
+bool UBrushMesh::GetPhysicsTriMeshData(struct FTriMeshCollisionData* CollisionData, bool InUseAllTriData)
 {
 	FTriIndices Triangle;
 
 	for (int32 i = 0; i < ProceduralMeshTris.Num(); i++)
 	{
-		const FProceduralMeshTriangle& tri = ProceduralMeshTris[i];
+		const FBrushTriangle& tri = ProceduralMeshTris[i];
 
 		Triangle.v0 = CollisionData->Vertices.Add(tri.Vertex0.Position);
 		Triangle.v1 = CollisionData->Vertices.Add(tri.Vertex1.Position);
@@ -396,12 +396,12 @@ bool UProceduralMeshComponent::GetPhysicsTriMeshData(struct FTriMeshCollisionDat
 	return true;
 }
 
-bool UProceduralMeshComponent::ContainsPhysicsTriMeshData(bool InUseAllTriData) const
+bool UBrushMesh::ContainsPhysicsTriMeshData(bool InUseAllTriData) const
 {
 	return (ProceduralMeshTris.Num() > 0);
 }
 
-void UProceduralMeshComponent::UpdateBodySetup()
+void UBrushMesh::UpdateBodySetup()
 {
 	if (ModelBodySetup == NULL)
 	{
@@ -411,7 +411,7 @@ void UProceduralMeshComponent::UpdateBodySetup()
 	}
 }
 
-void UProceduralMeshComponent::UpdateCollision()
+void UBrushMesh::UpdateCollision()
 {
 	if (bPhysicsStateCreated)
 	{
@@ -425,7 +425,7 @@ void UProceduralMeshComponent::UpdateCollision()
 	}
 }
 
-UBodySetup* UProceduralMeshComponent::GetBodySetup()
+UBodySetup* UBrushMesh::GetBodySetup()
 {
 	UpdateBodySetup();
 	return ModelBodySetup;

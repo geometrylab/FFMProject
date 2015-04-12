@@ -3,7 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
-#include "Geometry/ProceduralMeshComponent.h"
+#include "Geometry/BrushMesh.h"
 #include "BoxPrimitiveModel.generated.h"
 
 UCLASS()
@@ -16,7 +16,8 @@ public:
 
 	// Allow viewing/changing the Material of the procedural Mesh in editor (if placed in a level at construction)
 	UPROPERTY(VisibleAnywhere, Category = Materials)
-		UProceduralMeshComponent* mesh;
+    
+    UBrushMesh* mesh;
 
 	void GenerateCube(const float& InSize, TArray<FProceduralMeshTriangle>& OutTriangles);
 };

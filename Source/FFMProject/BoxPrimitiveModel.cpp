@@ -5,7 +5,7 @@
 
 ABoxPrimitiveModel::ABoxPrimitiveModel()
 {
-	mesh = CreateDefaultSubobject<UProceduralMeshComponent>(TEXT("ProceduralCube"));
+	mesh = CreateDefaultSubobject<UBrushMesh>(TEXT("CubeMesh"));
 
 	// Generate a cube
 	TArray<FProceduralMeshTriangle> triangles;
