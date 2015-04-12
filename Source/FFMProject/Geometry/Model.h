@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Polygon.h"
+#include "HalfEdgeMesh.h"
 
 namespace FFMGeometry
 {
@@ -14,6 +15,7 @@ public:
 
 private:
 	TArray<PolygonPtr> m_Polygons;
+	HalfEdgeMeshPtr m_pHalfEdgeMesh;
 };
 
 typedef TSharedPtr<Model> ModelPtr;
