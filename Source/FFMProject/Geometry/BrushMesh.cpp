@@ -1,13 +1,8 @@
-// UE4 Procedural Mesh Generation from the Epic Wiki (https://wiki.unrealengine.com/Procedural_Mesh_Generation)
-//
-// forked from "Engine/Plugins/Runtime/CustomMeshComponent/Source/CustomMeshComponent/Private/CustomMeshComponent.cpp"
-
 #include "FFMProject.h"
 #include "DynamicMeshBuilder.h"
 #include "BrushMesh.h"
 #include "Runtime/Launch/Resources/Version.h"
 
-/** Vertex Buffer */
 class FBrushVertexBuffer : public FVertexBuffer
 {
 public:
@@ -17,14 +12,12 @@ public:
 	{
 		FRHIResourceCreateInfo CreateInfo;
 		VertexBufferRHI = RHICreateVertexBuffer(Vertices.Num() * sizeof(FDynamicMeshVertex), BUF_Static, CreateInfo);
-		// Copy the vertex data into the vertex buffer.
 		void* VertexBufferData = RHILockVertexBuffer(VertexBufferRHI, 0, Vertices.Num() * sizeof(FDynamicMeshVertex), RLM_WriteOnly);
 		FMemory::Memcpy(VertexBufferData, Vertices.GetData(), Vertices.Num() * sizeof(FDynamicMeshVertex));
 		RHIUnlockVertexBuffer(VertexBufferRHI);
 	}
 };
 
-/** Index Buffer */
 class FBrushIndexBuffer : public FIndexBuffer
 {
 public:
@@ -34,14 +27,12 @@ public:
 	{
 		FRHIResourceCreateInfo CreateInfo;
 		IndexBufferRHI = RHICreateIndexBuffer(sizeof(int32), Indices.Num() * sizeof(int32), BUF_Static, CreateInfo);
-		// Write the indices to the index buffer.
 		void* Buffer = RHILockIndexBuffer(IndexBufferRHI, 0, Indices.Num() * sizeof(int32), RLM_WriteOnly);
 		FMemory::Memcpy(Buffer, Indices.GetData(), Indices.Num() * sizeof(int32));
 		RHIUnlockIndexBuffer(IndexBufferRHI);
 	}
 };
 
-/** Vertex Factory */
 class FBrushVertexFactory : public FLocalVertexFactory
 {
 public:
@@ -49,18 +40,13 @@ public:
 	{
 	}
 
-	/** Initialization */
 	void Init(const FBrushVertexBuffer* VertexBuffer)
 	{
-		// Commented out to enable building light of a level (but no backing is done for the procedural mesh itself)
-		//check(!IsInRenderingThread());
-
 		ENQUEUE_UNIQUE_RENDER_COMMAND_TWOPARAMETER(
 			InitProceduralMeshVertexFactory,
 			FBrushVertexFactory*, VertexFactory, this,
 			const FBrushVertexBuffer*, VertexBuffer, VertexBuffer,
 			{
-				// Initialize the vertex factory's stream components.
 				DataType NewData;
 				NewData.PositionComponent = STRUCTMEMBER_VERTEXSTREAMCOMPONENT(VertexBuffer, FDynamicMeshVertex, Position, VET_Float3);
 				NewData.TextureCoordinates.Add(
@@ -74,9 +60,6 @@ public:
 	}
 };
 
-
-
-/** Scene proxy */
 class FBrushSceneProxy : public FPrimitiveSceneProxy
 {
 public:
@@ -85,7 +68,6 @@ public:
 		: FPrimitiveSceneProxy(Component)
 		, MaterialRelevance(Component->GetMaterialRelevance(GetScene().GetFeatureLevel()))
 	{
-		// Add each triangle to the vertex/index buffer
 		for (int TriIdx = 0; TriIdx < Component->ProceduralMeshTris.Num(); TriIdx++)
 		{
 			FBrushTriangle& Tri = Component->ProceduralMeshTris[TriIdx];
@@ -122,15 +104,12 @@ public:
 			IndexBuffer.Indices.Add(VIndex);
 		}
 
-		// Init vertex factory
 		VertexFactory.Init(&VertexBuffer);
 
-		// Enqueue initialization of render resource
 		BeginInitResource(&VertexBuffer);
 		BeginInitResource(&IndexBuffer);
 		BeginInitResource(&VertexFactory);
 
-		// Grab material
 		Material = Component->GetMaterial(0);
 		if (Material == NULL)
 		{
@@ -173,7 +152,6 @@ public:
 			if (VisibilityMap & (1 << ViewIndex))
 			{
 				const FSceneView* View = Views[ViewIndex];
-				// Draw the mesh.
 				FMeshBatch& Mesh = Collector.AllocateMesh();
 				FMeshBatchElement& BatchElement = Mesh.Elements[0];
 				BatchElement.IndexBuffer = &IndexBuffer;
@@ -279,31 +257,25 @@ UBrushMesh::UBrushMesh(const FObjectInitializer& ObjectInitializer)
 	SetCollisionProfileName(UCollisionProfile::BlockAllDynamic_ProfileName);
 }
 
-bool UBrushMesh::SetProceduralMeshTriangles(const TArray<FBrushTriangle>& Triangles)
+bool UBrushMesh::SetTriangles(const TArray<FBrushTriangle>& Triangles)
 {
 	ProceduralMeshTris = Triangles;
 
 	UpdateCollision();
-
-	// Need to recreate scene proxy to send it over
-	MarkRenderStateDirty();
+    MarkRenderStateDirty();
 
 	return true;
 }
 
-void UBrushMesh::AddProceduralMeshTriangles(const TArray<FBrushTriangle>& Triangles)
+void UBrushMesh::AddTriangles(const TArray<FBrushTriangle>& Triangles)
 {
 	ProceduralMeshTris.Append(Triangles);
-
-	// Need to recreate scene proxy to send it over
 	MarkRenderStateDirty();
 }
 
-void  UBrushMesh::ClearProceduralMeshTriangles()
+void  UBrushMesh::ClearTriangles()
 {
 	ProceduralMeshTris.Reset();
-
-	// Need to recreate scene proxy to send it over
 	MarkRenderStateDirty();
 }
 
@@ -311,7 +283,6 @@ void  UBrushMesh::ClearProceduralMeshTriangles()
 FPrimitiveSceneProxy* UBrushMesh::CreateSceneProxy()
 {
 	FPrimitiveSceneProxy* Proxy = NULL;
-	// Only if have enough triangles
 	if (ProceduralMeshTris.Num() > 0)
 	{
 		Proxy = new FBrushSceneProxy(this);
@@ -327,16 +298,10 @@ int32 UBrushMesh::GetNumMaterials() const
 
 FBoxSphereBounds UBrushMesh::CalcBounds(const FTransform & LocalToWorld) const
 {
-	// Only if have enough triangles
 	if (ProceduralMeshTris.Num() > 0)
 	{
-		// Minimum Vector: It's set to the first vertex's position initially (NULL == FVector::ZeroVector might be required and a known vertex vector has intrinsically valid values)
 		FVector vecMin = ProceduralMeshTris[0].Vertex0.Position;
-
-		// Maximum Vector: It's set to the first vertex's position initially (NULL == FVector::ZeroVector might be required and a known vertex vector has intrinsically valid values)
 		FVector vecMax = ProceduralMeshTris[0].Vertex0.Position;
-
-		// Get maximum and minimum X, Y and Z positions of vectors
 		for (int32 TriIdx = 0; TriIdx < ProceduralMeshTris.Num(); TriIdx++)
 		{
 			vecMin.X = (vecMin.X > ProceduralMeshTris[TriIdx].Vertex0.Position.X) ? ProceduralMeshTris[TriIdx].Vertex0.Position.X : vecMin.X;
@@ -364,8 +329,8 @@ FBoxSphereBounds UBrushMesh::CalcBounds(const FTransform & LocalToWorld) const
 			vecMax.Z = (vecMax.Z < ProceduralMeshTris[TriIdx].Vertex2.Position.Z) ? ProceduralMeshTris[TriIdx].Vertex2.Position.Z : vecMax.Z;
 		}
 
-		FVector vecOrigin = ((vecMax - vecMin) / 2) + vecMin;	/* Origin = ((Max Vertex's Vector - Min Vertex's Vector) / 2 ) + Min Vertex's Vector */
-		FVector BoxPoint = vecMax - vecMin;			/* The difference between the "Maximum Vertex" and the "Minimum Vertex" is our actual Bounds Box */
+		FVector vecOrigin = ((vecMax - vecMin) / 2) + vecMin;
+		FVector BoxPoint = vecMax - vecMin;
 		return FBoxSphereBounds(vecOrigin, BoxPoint, BoxPoint.Size()).TransformBy(LocalToWorld);
 	}
 	else
@@ -418,8 +383,7 @@ void UBrushMesh::UpdateCollision()
 		DestroyPhysicsState();
 		UpdateBodySetup();
 		CreatePhysicsState();
-
-		// Works in Packaged build only since UE4.5:
+        
 		ModelBodySetup->InvalidatePhysicsData();
 		ModelBodySetup->CreatePhysicsMeshes();
 	}

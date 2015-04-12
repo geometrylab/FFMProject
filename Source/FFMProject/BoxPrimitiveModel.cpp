@@ -10,7 +10,7 @@ ABoxPrimitiveModel::ABoxPrimitiveModel()
 	// Generate a cube
 	TArray<FBrushTriangle> triangles;
 	GenerateCube(60.0f, triangles);
-	mesh->SetProceduralMeshTriangles(triangles);
+	mesh->SetTriangles(triangles);
 
 	RootComponent = mesh;
 }
