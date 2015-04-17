@@ -18,6 +18,9 @@ public:
 
 private:
 
+    void BuildBox();
+    void BuildTetrahedron();
+    
 	void UpdateBrushMesh();
     
     FFMGeometry::ModelPtr m_pModel;

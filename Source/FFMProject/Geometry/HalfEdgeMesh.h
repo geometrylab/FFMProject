@@ -74,6 +74,8 @@ public:
 
 	int GetFaceCount() const { return m_pFaces.Num(); }
 	const HE_FacePtr& GetFace(int idx) const { return m_pFaces[idx]; }
+    
+    void Clear() { m_pFaces.RemoveAll( [&](const HE_FacePtr&){return true;} ); }
 
 private:
 
