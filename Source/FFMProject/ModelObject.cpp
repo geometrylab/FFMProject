@@ -31,7 +31,7 @@ AModelObject::AModelObject() :
 			new HE_Vertex(FVector(100.0f, 0, 100.0f), edges[2]),
 			new HE_Vertex(FVector(100.0f, 0, 0), edges[3])
 		};
-		TSharedPtr<HE_Face> face = TSharedPtr<HE_Face>(new HE_Face(edges[0]));
+		HE_FacePtr face = HE_FacePtr(new HE_Face(edges[0]));
 		edges[0]->vert = verts[0];
 		edges[0]->next = edges[1];
 		edges[0]->face = face;
@@ -65,7 +65,7 @@ AModelObject::AModelObject() :
 			new HE_Vertex(FVector(100.0f, 100.0f, 100.0f), edges[2]),
 			new HE_Vertex(FVector(100.0f, 100.0f, 0), edges[3])
 		};
-		TSharedPtr<HE_Face> face = TSharedPtr<HE_Face>(new HE_Face(edges[0]));
+		HE_FacePtr face = HE_FacePtr(new HE_Face(edges[0]));
 		edges[0]->vert = verts[0];
 		edges[0]->next = edges[1];
 		edges[0]->face = face;
@@ -99,7 +99,7 @@ AModelObject::AModelObject() :
 			new HE_Vertex(FVector(0, 100.0f, 100.0f), edges[2]),
 			new HE_Vertex(FVector(0, 100.0f, 0), edges[3])
 		};
-		TSharedPtr<HE_Face> face = TSharedPtr<HE_Face>(new HE_Face(edges[0]));
+		HE_FacePtr face = HE_FacePtr(new HE_Face(edges[0]));
 		edges[0]->vert = verts[0];
 		edges[0]->next = edges[1];
 		edges[0]->face = face;
@@ -133,7 +133,7 @@ AModelObject::AModelObject() :
 			new HE_Vertex(FVector(0, 0, 100.0f), edges[2]),
 			new HE_Vertex(FVector(0, 0, 0), edges[3])
 		};
-		TSharedPtr<HE_Face> face = TSharedPtr<HE_Face>(new HE_Face(edges[0]));
+		HE_FacePtr face = HE_FacePtr(new HE_Face(edges[0]));
 		edges[0]->vert = verts[0];
 		edges[0]->next = edges[1];
 		edges[0]->face = face;
@@ -167,7 +167,7 @@ AModelObject::AModelObject() :
 			new HE_Vertex(FVector(100.0f, 100.0f, 100.0f), edges[2]),
 			new HE_Vertex(FVector(100.0f, 0, 100.0f), edges[3])
 		};
-		TSharedPtr<HE_Face> face = TSharedPtr<HE_Face>(new HE_Face(edges[0]));
+		HE_FacePtr face = HE_FacePtr(new HE_Face(edges[0]));
 		edges[0]->vert = verts[0];
 		edges[0]->next = edges[1];
 		edges[0]->face = face;
@@ -201,7 +201,7 @@ AModelObject::AModelObject() :
 			new HE_Vertex(FVector(0, 100.0f, 0), edges[2]),
 			new HE_Vertex(FVector(0, 0, 0), edges[3])
 		};
-		TSharedPtr<HE_Face> face = TSharedPtr<HE_Face>(new HE_Face(edges[0]));
+		HE_FacePtr face = HE_FacePtr(new HE_Face(edges[0]));
 		edges[0]->vert = verts[0];
 		edges[0]->next = edges[1];
 		edges[0]->face = face;

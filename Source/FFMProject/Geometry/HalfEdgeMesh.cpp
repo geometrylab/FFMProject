@@ -5,12 +5,12 @@
 namespace FFMGeometry
 {
 
-void HalfEdgeMesh::AddFace(const TSharedPtr<HE_Face>& pFace)
+void HalfEdgeMesh::AddFace(const HE_FacePtr& pFace)
 {
 	m_pFaces.Add(pFace);
 }
 
-void MakeVertexList(const TSharedPtr<HE_Face>& face, TArray<FVector>& outVertices)
+void MakeVertexList(const HE_FacePtr& face, TArray<FVector>& outVertices)
 {
 	HE_Edge* edge = face->edge;
 	do

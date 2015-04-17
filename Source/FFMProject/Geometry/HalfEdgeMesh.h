@@ -7,7 +7,7 @@ struct HE_Edge;
     
 struct HE_Vertex
 {
-	HE_Vertex() : edge(NULL)
+	HE_Vertex() : edge()
     {
     }
 
@@ -21,7 +21,7 @@ struct HE_Vertex
 
 struct HE_Face
 {
-	HE_Face() : edge(NULL)
+	HE_Face() : edge()
 	{
 	}
 
@@ -31,14 +31,16 @@ struct HE_Face
 
 	HE_Edge* edge;
 };
+
+typedef TSharedPtr<HE_Face> HE_FacePtr;
     
 struct HE_Edge
 {
-	HE_Edge() : vert(NULL), pair(NULL), next(NULL)
+	HE_Edge() : vert(), pair(), next()
     {
     }
 
-	HE_Edge(HE_Vertex* _vert, HE_Edge* _pair, HE_Edge* _next, TSharedPtr<HE_Face> _face) :
+	HE_Edge(HE_Vertex* _vert, HE_Edge* _pair, HE_Edge* _next, HE_FacePtr _face) :
 		vert(_vert),
 		pair(_pair),
 		next(_next),
@@ -49,23 +51,23 @@ struct HE_Edge
     HE_Vertex* vert;
     HE_Edge* pair;
     HE_Edge* next;
-	TSharedPtr<HE_Face> face;
+	HE_FacePtr face;
 };
 
-void MakeVertexList(const TSharedPtr<HE_Face>& face, TArray<FVector>& outVertices);
+void MakeVertexList(const HE_FacePtr& face, TArray<FVector>& outVertices);
 
 class HalfEdgeMesh
 {
 public:
 
-	void AddFace(const TSharedPtr<HE_Face>& pFace);
+	void AddFace(const HE_FacePtr& pFace);
 
 	int GetFaceCount() const { return m_pFaces.Num(); }
-	const TSharedPtr<HE_Face>& GetFace(int idx) const { return m_pFaces[idx]; }
+	const HE_FacePtr& GetFace(int idx) const { return m_pFaces[idx]; }
 
 private:
 
-	TArray<TSharedPtr<HE_Face>> m_pFaces;
+	TArray<HE_FacePtr> m_pFaces;
 };
 
 typedef TSharedPtr<HalfEdgeMesh> HalfEdgeMeshPtr;
