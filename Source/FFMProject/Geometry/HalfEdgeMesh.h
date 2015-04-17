@@ -2,110 +2,70 @@
 
 namespace FFMGeometry
 {
+
+struct HE_Edge;
     
 struct HE_Vertex
 {
-    HE_Vertex() : edge_idx(-1)
+	HE_Vertex() : edge(NULL)
     {
     }
+
+	HE_Vertex(const FVector& _pos, HE_Edge* _edge) : pos(_pos), edge(_edge)
+	{
+	}
+
     FVector pos;
-    int edge_idx;
+    HE_Edge* edge;
+};
+
+struct HE_Face
+{
+	HE_Face() : edge(NULL)
+	{
+	}
+
+	HE_Face(HE_Edge* _edge) : edge(_edge)
+	{
+	}
+
+	HE_Edge* edge;
 };
     
 struct HE_Edge
 {
-    HE_Edge() : vert_idx(-1), pair_idx(-1), face_idx(-1), next_idx(-1)
+	HE_Edge() : vert(NULL), pair(NULL), next(NULL)
     {
     }
-    int vert_idx;
-    int pair_idx;
-    int face_idx;
-    int next_idx;
+
+	HE_Edge(HE_Vertex* _vert, HE_Edge* _pair, HE_Edge* _next, TSharedPtr<HE_Face> _face) :
+		vert(_vert),
+		pair(_pair),
+		next(_next),
+		face(_face)
+	{
+	}
+
+    HE_Vertex* vert;
+    HE_Edge* pair;
+    HE_Edge* next;
+	TSharedPtr<HE_Face> face;
 };
-    
-struct HE_Face
-{
-    HE_Face() : edge_idx(-1)
-    {
-    }
-    int edge_idx;
-};
+
+void MakeVertexList(const TSharedPtr<HE_Face>& face, TArray<FVector>& outVertices);
 
 class HalfEdgeMesh
 {
 public:
-    
-    const HE_Edge& GetNextEdge( const HE_Edge& edge ) const
-    {
-        return m_Edges[edge.next_idx];
-    }
-    
-    const HE_Edge* GetPairEdge( const HE_Edge& edge ) const
-    {
-        if( edge.pair_idx == -1 )
-            return nullptr;
-        return &m_Edges[edge.pair_idx];
-    }
-    
-    const HE_Face& GetFace( const HE_Edge& edge ) const
-    {
-        return m_Faces[edge.face_idx];
-    }
-    
-    const FVector& GetPos( const HE_Edge& edge ) const
-    {
-        return m_Vertices[edge.vert_idx].pos;
-    }
-    
-    const FVector& GetNextPos( const HE_Edge& edge ) const
-    {
-        return m_Vertices[m_Edges[edge.next_idx].vert_idx].pos;
-    }
-    
-    TArray<FVector> MakeFace( const HE_Face& face ) const
-    {
-        TArray<FVector> vlist;
-        
-        int first_edge_idx = face.edge_idx;
-        int edge_idx = first_edge_idx;
-        
-        do
-        {
-            vlist.Add(m_Vertices[m_Edges[edge_idx].vert_idx].pos);
-            edge_idx = m_Edges[edge_idx].next_idx;
-        } while( first_edge_idx != edge_idx);
-        
-        return vlist;
-    }
-    
-    const HE_Face* GetAdjacentFace( const HE_Face& face ) const
-    {
-        int pair_idx = m_Edges[face.edge_idx].pair_idx;
-        if( pair_idx == -1 )
-            return NULL;
-        return &m_Faces[m_Edges[pair_idx].face_idx];
-    }
-    
-    int GetFaceCount() const
-    {
-        return m_Faces.Num();
-    }
-    
-    const HE_Face& GetFace( int face_idx )
-    {
-        return m_Faces[face_idx];
-    }
-    
-    int GetFaceIndex( const HE_Face& face )
-    {
-        return m_Edges[face.edge_idx].face_idx;
-    }
-    
+
+	void AddFace(const TSharedPtr<HE_Face>& pFace);
+
+	int GetFaceCount() const { return m_pFaces.Num(); }
+	const TSharedPtr<HE_Face>& GetFace(int idx) const { return m_pFaces[idx]; }
+
 private:
-    
-    TArray<HE_Edge> m_Edges;
-    TArray<HE_Vertex> m_Vertices;
-    TArray<HE_Face> m_Faces;
+
+	TArray<TSharedPtr<HE_Face>> m_pFaces;
 };
 
 typedef TSharedPtr<HalfEdgeMesh> HalfEdgeMeshPtr;

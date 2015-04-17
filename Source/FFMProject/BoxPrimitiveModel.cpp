@@ -45,12 +45,12 @@ void ABoxPrimitiveModel::GenerateCube(const float& InSize, TArray<FBrushTriangle
 	v1.Position = p1;
 	v2.Position = p2;
 	v3.Position = p3;
-	t1.Vertex0 = v0;
-	t1.Vertex1 = v1;
-	t1.Vertex2 = v2;
-	t2.Vertex0 = v0;
-	t2.Vertex1 = v2;
-	t2.Vertex2 = v3;
+	t1.v[0] = v0;
+	t1.v[1] = v1;
+	t1.v[2] = v2;
+	t2.v[0] = v0;
+	t2.v[1] = v2;
+	t2.v[2] = v3;
 	OutTriangles.Add(t1);
 	OutTriangles.Add(t2);
 
@@ -59,12 +59,12 @@ void ABoxPrimitiveModel::GenerateCube(const float& InSize, TArray<FBrushTriangle
 	v1.Position = p5;
 	v2.Position = p6;
 	v3.Position = p7;
-	t1.Vertex0 = v0;
-	t1.Vertex1 = v1;
-	t1.Vertex2 = v2;
-	t2.Vertex0 = v0;
-	t2.Vertex1 = v2;
-	t2.Vertex2 = v3;
+	t1.v[0] = v0;
+	t1.v[1] = v1;
+	t1.v[2] = v2;
+	t2.v[0] = v0;
+	t2.v[1] = v2;
+	t2.v[2] = v3;
 	OutTriangles.Add(t1);
 	OutTriangles.Add(t2);
 
@@ -73,12 +73,12 @@ void ABoxPrimitiveModel::GenerateCube(const float& InSize, TArray<FBrushTriangle
 	v1.Position = p6;
 	v2.Position = p1;
 	v3.Position = p0;
-	t1.Vertex0 = v0;
-	t1.Vertex1 = v1;
-	t1.Vertex2 = v2;
-	t2.Vertex0 = v0;
-	t2.Vertex1 = v2;
-	t2.Vertex2 = v3;
+	t1.v[0] = v0;
+	t1.v[1] = v1;
+	t1.v[2] = v2;
+	t2.v[0] = v0;
+	t2.v[1] = v2;
+	t2.v[2] = v3;
 	OutTriangles.Add(t1);
 	OutTriangles.Add(t2);
 
@@ -87,12 +87,12 @@ void ABoxPrimitiveModel::GenerateCube(const float& InSize, TArray<FBrushTriangle
 	v1.Position = p2;
 	v2.Position = p5;
 	v3.Position = p4;
-	t1.Vertex0 = v0;
-	t1.Vertex1 = v1;
-	t1.Vertex2 = v2;
-	t2.Vertex0 = v0;
-	t2.Vertex1 = v2;
-	t2.Vertex2 = v3;
+	t1.v[0] = v0;
+	t1.v[1] = v1;
+	t1.v[2] = v2;
+	t2.v[0] = v0;
+	t2.v[1] = v2;
+	t2.v[2] = v3;
 	OutTriangles.Add(t1);
 	OutTriangles.Add(t2);
 
@@ -101,12 +101,12 @@ void ABoxPrimitiveModel::GenerateCube(const float& InSize, TArray<FBrushTriangle
 	v1.Position = p6;
 	v2.Position = p5;
 	v3.Position = p2;
-	t1.Vertex0 = v0;
-	t1.Vertex1 = v1;
-	t1.Vertex2 = v2;
-	t2.Vertex0 = v0;
-	t2.Vertex1 = v2;
-	t2.Vertex2 = v3;
+	t1.v[0] = v0;
+	t1.v[1] = v1;
+	t1.v[2] = v2;
+	t2.v[0] = v0;
+	t2.v[1] = v2;
+	t2.v[2] = v3;
 	OutTriangles.Add(t1);
 	OutTriangles.Add(t2);
 
@@ -115,12 +115,12 @@ void ABoxPrimitiveModel::GenerateCube(const float& InSize, TArray<FBrushTriangle
 	v1.Position = p4;
 	v2.Position = p7;
 	v3.Position = p0;
-	t1.Vertex0 = v0;
-	t1.Vertex1 = v1;
-	t1.Vertex2 = v2;
-	t2.Vertex0 = v0;
-	t2.Vertex1 = v2;
-	t2.Vertex2 = v3;
+	t1.v[0] = v0;
+	t1.v[1] = v1;
+	t1.v[2] = v2;
+	t2.v[0] = v0;
+	t2.v[1] = v2;
+	t2.v[2] = v3;
 	OutTriangles.Add(t1);
 	OutTriangles.Add(t2);
 }

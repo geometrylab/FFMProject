@@ -12,9 +12,7 @@ struct FBrushVertex
 
 struct FBrushTriangle
 {
-	FBrushVertex Vertex0;
-	FBrushVertex Vertex1;
-	FBrushVertex Vertex2;
+	FBrushVertex v[3];
 };
 
 UCLASS()
@@ -36,7 +34,7 @@ public:
 	int32 GetNumMaterials() const override;
 
 	void UpdateBodySetup();
-	void UpdateCollision();
+	void UpdateCollision();	
 
 private:
 

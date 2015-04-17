@@ -1,6 +1,7 @@
 #include "FFMProject.h"
 #include "EditTool.h"
 #include "BoxPrimitiveModel.h"
+#include "ModelObject.h"
 
 AEditTool::AEditTool(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
@@ -51,7 +52,9 @@ void AEditTool::PlaceCube()
 			{
 				if( GEngine )
 					GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Hit!!!!"));
-				GetWorld()->SpawnActor<ABoxPrimitiveModel>(hitResults[i].Location, FRotator::ZeroRotator);
+
+				//GetWorld()->SpawnActor<ABoxPrimitiveModel>(hitResults[i].Location, FRotator::ZeroRotator);
+				GetWorld()->SpawnActor<AModelObject>(hitResults[i].Location, FRotator::ZeroRotator);
 			}
 		}
 	}
