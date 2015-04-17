@@ -40,7 +40,7 @@ struct HE_Edge
     {
     }
 
-	HE_Edge(HE_Vertex* _vert, HE_Edge* _pair, HE_Edge* _next, HE_FacePtr _face) :
+	HE_Edge(HE_Vertex* _vert, HE_Edge* _pair, HE_Edge* _next, const HE_FacePtr& _face) :
 		vert(_vert),
 		pair(_pair),
 		next(_next),
