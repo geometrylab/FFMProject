@@ -21,7 +21,7 @@ struct HE_Vertex
 
 struct HE_Face
 {
-	HE_Face() : edge()
+	HE_Face() : edge(NULL)
 	{
 	}
 
@@ -32,6 +32,7 @@ struct HE_Face
 	~HE_Face();
 
 	void MakeVertexList(TArray<FVector>& outVertices);
+	HE_Edge* FindEdge(const FVector& v0, const FVector& v1, bool bExcludeEdgeWithPair = false );
 
 	HE_Edge* edge;
 };
@@ -40,7 +41,7 @@ typedef TSharedPtr<HE_Face> HE_FacePtr;
     
 struct HE_Edge
 {
-	HE_Edge() : vert(), pair(), next()
+	HE_Edge() : vert(NULL), pair(NULL), next(NULL)
     {
     }
 
@@ -68,7 +69,8 @@ class HalfEdgeMesh
 {
 public:
 
-	void AddFace(const HE_FacePtr& pFace);
+	void AddFace(const HE_FacePtr& pFace) { m_pFaces.Add(pFace); }
+	void SolvePair(const HE_FacePtr& pFace);
 
 	int GetFaceCount() const { return m_pFaces.Num(); }
 	const HE_FacePtr& GetFace(int idx) const { return m_pFaces[idx]; }
