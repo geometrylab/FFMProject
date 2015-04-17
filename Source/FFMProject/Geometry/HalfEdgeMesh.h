@@ -29,6 +29,10 @@ struct HE_Face
 	{
 	}
 
+	~HE_Face();
+
+	void MakeVertexList(TArray<FVector>& outVertices);
+
 	HE_Edge* edge;
 };
 
@@ -48,13 +52,17 @@ struct HE_Edge
 	{
 	}
 
+	~HE_Edge()
+	{
+		if (vert)
+			delete vert;
+	}
+
     HE_Vertex* vert;
     HE_Edge* pair;
     HE_Edge* next;
 	HE_FacePtr face;
 };
-
-void MakeVertexList(const HE_FacePtr& face, TArray<FVector>& outVertices);
 
 class HalfEdgeMesh
 {

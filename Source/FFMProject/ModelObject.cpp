@@ -88,7 +88,7 @@ void AModelObject::UpdateBrushMesh()
 	for (int i = 0, iCount(m_pModel->GetFaceCount()); i < iCount; ++i)
 	{
 		TArray<FVector> vlist;
-		MakeVertexList(m_pModel->GetFace(i),vlist);
+		m_pModel->GetFace(i)->MakeVertexList(vlist);
 		int iVertexCount = vlist.Num();
 
 		for (int k = 0; k < iVertexCount - 2; ++k )
