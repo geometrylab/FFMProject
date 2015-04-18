@@ -2,6 +2,7 @@
 
 #include "FFMProject.h"
 #include "ModelObject.h"
+#include "Geometry/LoopSubdivision.h"
 
 using namespace FFMGeometry;
 
@@ -12,9 +13,11 @@ AModelObject::AModelObject() :
 
 	m_pBrushMesh = CreateDefaultSubobject<UBrushMesh>(TEXT("BrushMesh"));
 
-
 //    BuildBox();
     BuildTetrahedron();
+
+	FFMGeometry::LoopSubdivision ls;
+	m_pModel = ls.Subdivide(m_pModel);
     
 	UpdateBrushMesh();
 

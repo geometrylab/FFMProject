@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HalfEdgeMesh.h"
+#include "Model.h"
 
 namespace FFMGeometry
 {
@@ -9,7 +9,10 @@ class LoopSubdivision
 {
 public:
     
-    HalfEdgeMeshPtr Subdivide( HalfEdgeMeshPtr pHalfEdgeMesh);
+	ModelPtr Subdivide(ModelPtr pHalfEdgeMesh);
+
+private:
+	
 };
 
 }

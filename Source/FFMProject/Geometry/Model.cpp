@@ -22,13 +22,13 @@ void Model::AddFace(const TArray<FVector>& vertices)
 
 	for (int32 i = 0; i < vCount; ++i)
 	{
-		verts[i]->edge = edges[i];
-		verts[i]->pos = vertices[i];
+		verts[i]->edge_ = edges[i];
+		verts[i]->pos_ = vertices[i];
 
-		edges[i]->vert = verts[i];
-		edges[i]->pair = NULL;
-		edges[i]->next = edges[(i + 1) % vCount];
-		edges[i]->face = face;
+		edges[i]->vert_ = verts[i];
+		edges[i]->pair_ = NULL;
+		edges[i]->next_ = edges[(i + 1) % vCount];
+		edges[i]->face_ = face;
 	}
 
 	HalfEdgeMesh::SolvePair(face);
