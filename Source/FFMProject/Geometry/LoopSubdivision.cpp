@@ -25,27 +25,25 @@ ModelPtr LoopSubdivision::Subdivide(ModelPtr pModel)
 				{
 					next_edge_positions[count] =
 						edge->vert_->pos_ * 0.375f +
-						edge->PrevEdge()->vert_->pos_ * 0.375f +
-						edge->next_->vert_->pos_ * 0.125f +
-						edge->pair_->next_->next_->vert_->pos_ * 0.125f;
+						edge->next_->vert_->pos_ * 0.375f +
+						edge->prev_->vert_->pos_ * 0.125f +
+						edge->pair_->prev_->vert_->pos_ * 0.125f;
 				}
 				else
 				{
 					next_edge_positions[count] =
 						edge->vert_->pos_ * 0.5f +
-						edge->next_->next_->vert_->pos_ * 0.5f;
+						edge->next_->vert_->pos_ * 0.5f;
 				}
 
 				{
 					TArray<HE_Vertex*> neighbors;
 					edge->vert_->GetNeighboringVertices(neighbors);
 					int n = neighbors.Num();
-					float beta = 3.0f / (n*(n + 2.0f));
-					next_vert_positions[count] = FVector::ZeroVector;
+					float beta = n > 3 ? 3.0f / (8.0f*n) : 3.0f / 16.0f;
+					next_vert_positions[count] = (1 - n*beta)*edge->vert_->pos_;
 					for (int k = 0; k < n; ++k)
-						next_vert_positions[count] += neighbors[k]->pos_;
-					next_vert_positions[count] *= beta;
-					next_vert_positions[count] += (1 - n*beta)*edge->vert_->pos_;
+						next_vert_positions[count] += neighbors[k]->pos_*beta;
 				}
 
 				++count;
@@ -55,18 +53,24 @@ ModelPtr LoopSubdivision::Subdivide(ModelPtr pModel)
 		}
 
 		// Makes next level faces based on new position calculated above
-		{
-			TArray<FVector> next_face;
+		{			
 			for (int k = 0; k < 3; ++k)
 			{
 				int prev_k = (k + 2) % 3;
 
+				TArray<FVector> next_face;
 				next_face.Add(next_vert_positions[k]);
-				next_face.Add(next_edge_positions[prev_k]);
 				next_face.Add(next_edge_positions[k]);
+				next_face.Add(next_edge_positions[prev_k]);
 
 				pNextModel->AddFace(next_face);
 			}
+
+			TArray<FVector> next_face;
+			next_face.Add(next_edge_positions[0]);
+			next_face.Add(next_edge_positions[1]);
+			next_face.Add(next_edge_positions[2]);
+			pNextModel->AddFace(next_face);
 		}
 	}
 

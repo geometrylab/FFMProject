@@ -13,11 +13,16 @@ AModelObject::AModelObject() :
 
 	m_pBrushMesh = CreateDefaultSubobject<UBrushMesh>(TEXT("BrushMesh"));
 
-//    BuildBox();
-    BuildTetrahedron();
+    BuildBox();
+    //BuildTetrahedron();
 
-	FFMGeometry::LoopSubdivision ls;
-	m_pModel = ls.Subdivide(m_pModel);
+	int nSubdivisionCount = rand() % 5 + 1;
+
+	for (int i = 0; i < nSubdivisionCount; ++i)
+	{
+		FFMGeometry::LoopSubdivision ls;
+		m_pModel = ls.Subdivide(m_pModel);
+	}
     
 	UpdateBrushMesh();
 
@@ -68,58 +73,103 @@ void AModelObject::UpdateBrushMesh()
 
 void AModelObject::BuildBox()
 {
-    m_pModel->Clear();
+	const float size = 100.0f;
+
+	m_pModel->Clear();
+
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(0, 0, 0));
+		vertices.Add(FVector(0, 0, size));
+		vertices.Add(FVector(size, 0, size));
+		m_pModel->AddFace(vertices);
+	}
+
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(0, 0, 0));
+		vertices.Add(FVector(size, 0, size));
+        vertices.Add(FVector(size, 0, 0));
+		m_pModel->AddFace(vertices);
+        
+    }
     
-    {
-        TArray<FVector> vertices;
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(size, 0, 0));
+		vertices.Add(FVector(size, 0, size));
+		vertices.Add(FVector(size, size, size));
+		m_pModel->AddFace(vertices);
+	}
+
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(size, 0, 0));
+		vertices.Add(FVector(size, size, size));
+        vertices.Add(FVector(size, size, 0));
+        m_pModel->AddFace(vertices);
+    }
+    
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(size, size, 0));
+		vertices.Add(FVector(size, size, size));
+		vertices.Add(FVector(0, size, size));
+		m_pModel->AddFace(vertices);
+	}
+
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(size, size, 0));
+		vertices.Add(FVector(0, size, size));
+        vertices.Add(FVector(0, size, 0));
+        m_pModel->AddFace(vertices);
+    }
+    
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(0, size, 0));
+		vertices.Add(FVector(0, size, size));
+		vertices.Add(FVector(0, 0, size));
+		m_pModel->AddFace(vertices);
+	}
+
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(0, size, 0));
+		vertices.Add(FVector(0, 0, size));
         vertices.Add(FVector(0, 0, 0));
-        vertices.Add(FVector(0, 0, 100.0f));
-        vertices.Add(FVector(100.0f, 0, 100.0f));
-        vertices.Add(FVector(100.0f, 0, 0));
         m_pModel->AddFace(vertices);
     }
     
-    {
-        TArray<FVector> vertices;
-        vertices.Add(FVector(100.0f, 0, 0));
-        vertices.Add(FVector(100.0f, 0, 100.0f));
-        vertices.Add(FVector(100.0f, 100.0f, 100.0f));
-        vertices.Add(FVector(100.0f, 100.0f, 0));
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(0, 0, size));
+		vertices.Add(FVector(0, size, size));
+		vertices.Add(FVector(size, size, size));
+		m_pModel->AddFace(vertices);
+	}
+
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(0, 0, size));
+		vertices.Add(FVector(size, size, size));
+        vertices.Add(FVector(size, 0, size));
         m_pModel->AddFace(vertices);
     }
     
-    {
-        TArray<FVector> vertices;
-        vertices.Add(FVector(100.0f, 100.0f, 0));
-        vertices.Add(FVector(100.0f, 100.0f, 100.0f));
-        vertices.Add(FVector(0, 100.0f, 100.0f));
-        vertices.Add(FVector(0, 100.0f, 0));
-        m_pModel->AddFace(vertices);
-    }
-    
-    {
-        TArray<FVector> vertices;
-        vertices.Add(FVector(0, 100.0f, 0));
-        vertices.Add(FVector(0, 100.0f, 100.0f));
-        vertices.Add(FVector(0, 0, 100.0f));
-        vertices.Add(FVector(0, 0, 0));
-        m_pModel->AddFace(vertices);
-    }
-    
-    {
-        TArray<FVector> vertices;
-        vertices.Add(FVector(0, 0, 100.0f));
-        vertices.Add(FVector(0, 100.0f, 100.0f));
-        vertices.Add(FVector(100.0f, 100.0f, 100.0f));
-        vertices.Add(FVector(100.0f, 0, 100.0f));
-        m_pModel->AddFace(vertices);
-    }
-    
-    {
-        TArray<FVector> vertices;
-        vertices.Add(FVector(100.0f, 0, 0));
-        vertices.Add(FVector(100.0f, 100.0f, 0));
-        vertices.Add(FVector(0, 100.0f, 0));
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(size, 0, 0));
+		vertices.Add(FVector(size, size, 0));
+		vertices.Add(FVector(0, size, 0));
+		m_pModel->AddFace(vertices);
+	}
+
+	{
+		TArray<FVector> vertices;
+		vertices.Add(FVector(size, 0, 0));
+		vertices.Add(FVector(0, size, 0));
         vertices.Add(FVector(0, 0, 0));
         m_pModel->AddFace(vertices);
     }
@@ -127,47 +177,41 @@ void AModelObject::BuildBox()
 
 void AModelObject::BuildTetrahedron()
 {
+	const float size = 230.0f;
     m_pModel->Clear();
     
-    {
-        TArray<FVector> vertices;
-        vertices.Add(FVector(100.0f, 0, 0));
-        vertices.Add(FVector(100.0f, 100.0f, 0));
-        vertices.Add(FVector(0, 100.0f, 0));
-        vertices.Add(FVector(0, 0, 0));
-        m_pModel->AddFace(vertices);
+	TArray<FVector> bottom_vertices;
+    {        
+		bottom_vertices.Add(FVector(0.86602f*size, 0.5f*size, 0));
+		bottom_vertices.Add(FVector(0, size, 0));
+		bottom_vertices.Add(FVector(0, 0, 0));
+		m_pModel->AddFace(bottom_vertices);
     }
     
-    const FVector apex(50.0f,50.0f,100.0f);
+	FVector apex = (bottom_vertices[0] + bottom_vertices[1] + bottom_vertices[2]) / 3.0f;
+	apex.Z = 0.4f*size;
+
     {
         TArray<FVector> vertices;
-        vertices.Add(FVector(0,0,0));
-        vertices.Add(FVector(0,100.0f,0));
+		vertices.Add(bottom_vertices[2]);
+		vertices.Add(bottom_vertices[1]);
         vertices.Add(apex);
         m_pModel->AddFace(vertices);
     }
     
     {
         TArray<FVector> vertices;
-        vertices.Add(FVector(0,100.0f,0));
-        vertices.Add(FVector(100.0f,100.0f,0));
+		vertices.Add(bottom_vertices[1]);
+		vertices.Add(bottom_vertices[0]);
         vertices.Add(apex);
         m_pModel->AddFace(vertices);
     }
     
     {
         TArray<FVector> vertices;
-        vertices.Add(FVector(100.0f,100.0f,0));
-        vertices.Add(FVector(100.0f,0,0));
+		vertices.Add(bottom_vertices[0]);
+		vertices.Add(bottom_vertices[2]);
         vertices.Add(apex);
         m_pModel->AddFace(vertices);
-    }
-    
-    {
-        TArray<FVector> vertices;
-        vertices.Add(FVector(100.0f,0,0));
-        vertices.Add(FVector(0,0,0));
-        vertices.Add(apex);
-        m_pModel->AddFace(vertices);
-    }
+    }    
 }

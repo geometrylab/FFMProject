@@ -15,7 +15,7 @@ struct HE_Vertex
 	{
 	}
 
-	void GetNeighboringVertices(TArray<HE_Vertex*>& outVertices);	
+	void GetNeighboringVertices(TArray<HE_Vertex*>& outVertices) const;
 
     FVector pos_;
     HE_Edge* edge_;
@@ -33,8 +33,8 @@ struct HE_Face
 
 	~HE_Face();
 
-	void MakeVertexList(TArray<FVector>& outVertices);
-	HE_Edge* FindEdge(const FVector& v0, const FVector& v1, bool bExcludeEdgeWithPair = false );	
+	void MakeVertexList(TArray<FVector>& outVertices) const;
+	HE_Edge* FindEdge(const FVector& v0, const FVector& v1, bool bExcludeEdgeWithPair = false) const;
 
 	HE_Edge* edge_;
 };
@@ -43,14 +43,15 @@ typedef TSharedPtr<HE_Face> HE_FacePtr;
     
 struct HE_Edge
 {
-	HE_Edge() : vert_(NULL), pair_(NULL), next_(NULL)
+	HE_Edge() : vert_(NULL), pair_(NULL), next_(NULL), prev_(NULL)
     {
     }
 
-	HE_Edge(HE_Vertex* vert, HE_Edge* pair, HE_Edge* next, const HE_FacePtr& face) :
+	HE_Edge(HE_Vertex* vert, HE_Edge* pair, HE_Edge* next, HE_Edge* prev, const HE_FacePtr& face) :
 		vert_(vert),
 		pair_(pair),
 		next_(next),
+		prev_(prev),
 		face_(face)
 	{
 	}
@@ -61,11 +62,10 @@ struct HE_Edge
 			delete vert_;
 	}
 
-	HE_Edge* PrevEdge();
-
     HE_Vertex* vert_;
     HE_Edge* pair_;
     HE_Edge* next_;
+	HE_Edge* prev_;
 	HE_FacePtr face_;
 };
 

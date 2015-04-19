@@ -28,6 +28,7 @@ void Model::AddFace(const TArray<FVector>& vertices)
 		edges[i]->vert_ = verts[i];
 		edges[i]->pair_ = NULL;
 		edges[i]->next_ = edges[(i + 1) % vCount];
+		edges[i]->next_->prev_ = edges[i];
 		edges[i]->face_ = face;
 	}
 

@@ -5,31 +5,32 @@
 namespace FFMGeometry
 {
 
-void HE_Vertex::GetNeighboringVertices(TArray<HE_Vertex*>& outVertices)
+void HE_Vertex::GetNeighboringVertices(TArray<HE_Vertex*>& outVertices) const
 {
 	HE_Edge* edge = edge_;
-	bool bMeetBoundary = false;
+	bool bCircular = true;
 	do
 	{
 		outVertices.Add(edge->next_->vert_);
 		if (!edge->pair_)
 		{
-			bMeetBoundary = true;
+			bCircular = false;
 			break;
 		}
 		edge = edge->pair_->next_;
 	} while (edge != edge_);
 
-	HE_Edge* prev = edge_->PrevEdge();
-	if (!bMeetBoundary || !prev->pair_)
+	if (bCircular)
 		return;
-
-	edge = prev->pair_->PrevEdge();
-	while (edge->pair_ && edge != edge_)
+	
+	edge = edge_->prev_;
+	do
 	{
-		outVertices.Add(edge->pair_->vert_);
-		edge = edge->pair_->PrevEdge();
-	}
+		outVertices.Add(edge->vert_);
+		if (!edge->pair_)
+			break;
+		edge = edge->pair_->prev_;
+	} while (edge != edge_);
 }
 
 HE_Face::~HE_Face()
@@ -46,7 +47,7 @@ HE_Face::~HE_Face()
 	}
 }
 
-void HE_Face::MakeVertexList(TArray<FVector>& outVertices)
+void HE_Face::MakeVertexList(TArray<FVector>& outVertices) const
 {
 	HE_Edge* edge = edge_;
 	do
@@ -56,7 +57,7 @@ void HE_Face::MakeVertexList(TArray<FVector>& outVertices)
 	} while (edge != edge_);
 }
 
-HE_Edge* HE_Face::FindEdge(const FVector& v0, const FVector& v1, bool bExcludeEdgeWithPair)
+HE_Edge* HE_Face::FindEdge(const FVector& v0, const FVector& v1, bool bExcludeEdgeWithPair) const
 {
 	HE_Edge* edge = edge_;
 	do
@@ -71,21 +72,6 @@ HE_Edge* HE_Face::FindEdge(const FVector& v0, const FVector& v1, bool bExcludeEd
 	return NULL;
 }
 
-HE_Edge* HE_Edge::PrevEdge()
-{
-	HE_Edge* edge = this;
-
-	do 
-	{
-		if (edge->next_ == this)
-			return edge;
-		edge = edge->next_;
-	} while (edge != this);
-
-	// The previous edge must be found all the time.
-	return NULL;
-}
-
 void HalfEdgeMesh::SolvePair(const HE_FacePtr& pFace)
 {
 	HE_Edge* edge = pFace->edge_;
@@ -93,11 +79,11 @@ void HalfEdgeMesh::SolvePair(const HE_FacePtr& pFace)
 	{
 		for (int i = 0, iCount(m_pFaces.Num()); i < iCount; ++i)
 		{
-			HE_Edge* foundEdge = m_pFaces[i]->FindEdge(edge->next_->vert_->pos_, edge->vert_->pos_, true);
-			if (foundEdge)
+			HE_Edge* pair = m_pFaces[i]->FindEdge(edge->next_->vert_->pos_, edge->vert_->pos_, true);
+			if (pair)
 			{
-				foundEdge->pair_ = edge;
-				edge->pair_ = foundEdge;
+				pair->pair_ = edge;
+				edge->pair_ = pair;
 				break;
 			}
 		}
