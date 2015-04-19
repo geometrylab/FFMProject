@@ -74,6 +74,7 @@ ModelPtr LoopSubdivision::Subdivide(ModelPtr pModel)
 		}
 	}
 
+	pNextModel->SolveAllEdgePairs();
 	return pNextModel;
 }
 

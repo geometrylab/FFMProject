@@ -16,7 +16,9 @@ AModelObject::AModelObject() :
     BuildBox();
     //BuildTetrahedron();
 
-	int nSubdivisionCount = rand() % 5 + 1;
+	m_pModel->SolveAllEdgePairs();
+
+	int nSubdivisionCount = rand() % 5;
 
 	for (int i = 0; i < nSubdivisionCount; ++i)
 	{

@@ -31,9 +31,14 @@ void Model::AddFace(const TArray<FVector>& vertices)
 		edges[i]->next_->prev_ = edges[i];
 		edges[i]->face_ = face;
 	}
-
-	HalfEdgeMesh::SolvePair(face);
+	
 	HalfEdgeMesh::AddFace(face);
+}
+
+void Model::SolveAllEdgePairs()
+{
+	for (int i = 0, iCount(GetFaceCount()); i < iCount; ++i)
+		SolvePair(GetFace(i));
 }
 
 };

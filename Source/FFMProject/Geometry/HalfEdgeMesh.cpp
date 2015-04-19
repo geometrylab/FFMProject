@@ -37,13 +37,13 @@ HE_Face::~HE_Face()
 {
 	if (edge_)
 	{
-		HE_Edge* pEntryEdge = edge_;
+		HE_Edge* edge = edge_;
 		do
 		{
-			HE_Edge* pDeletedEdge = edge_;
-			edge_ = edge_->next_;
-			delete pDeletedEdge;
-		} while (edge_ != pEntryEdge);
+			HE_Edge* prev = edge;
+			edge = edge->next_;
+			delete prev;
+		} while (edge != edge_);
 	}
 }
 
@@ -77,14 +77,19 @@ void HalfEdgeMesh::SolvePair(const HE_FacePtr& pFace)
 	HE_Edge* edge = pFace->edge_;
 	do
 	{
-		for (int i = 0, iCount(m_pFaces.Num()); i < iCount; ++i)
+		if (!edge->pair_)
 		{
-			HE_Edge* pair = m_pFaces[i]->FindEdge(edge->next_->vert_->pos_, edge->vert_->pos_, true);
-			if (pair)
+			for (int i = 0, iCount(m_pFaces.Num()); i < iCount; ++i)
 			{
-				pair->pair_ = edge;
-				edge->pair_ = pair;
-				break;
+				if (m_pFaces[i] == pFace)
+					continue;
+				HE_Edge* pair = m_pFaces[i]->FindEdge(edge->next_->vert_->pos_, edge->vert_->pos_, true);
+				if (pair)
+				{
+					pair->pair_ = edge;
+					edge->pair_ = pair;
+					break;
+				}
 			}
 		}
 		edge = edge->next_;
