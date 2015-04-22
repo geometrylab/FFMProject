@@ -4,6 +4,17 @@ namespace FFMGeometry
 {
 
 struct HE_Edge;
+struct HE_Vertex;
+    
+struct HE_Pos
+{
+    HE_Pos( const FVector& p ) : p_(p)
+    {
+    }
+    
+    FVector p_;
+    TArray<HE_Vertex*> vs_;
+};
     
 struct HE_Vertex
 {
@@ -11,13 +22,13 @@ struct HE_Vertex
     {
     }
 
-	HE_Vertex(const FVector& pos, HE_Edge* edge) : pos_(pos), edge_(edge)
+	HE_Vertex(const FVector& pos, HE_Edge* edge) : pos_(new HE_Pos(pos)), edge_(edge)
 	{
 	}
 
 	void GetNeighboringVertices(TArray<HE_Vertex*>& outVertices) const;
 
-    FVector pos_;
+    HE_Pos* pos_;
     HE_Edge* edge_;
 };
 
@@ -34,8 +45,7 @@ struct HE_Face
 	~HE_Face();
 
 	void MakeVertexList(TArray<FVector>& outVertices) const;
-	HE_Edge* FindEdge(const FVector& v0, const FVector& v1, bool bExcludeEdgeWithPair = false) const;
-
+	HE_Edge* FindEdge(const HE_Pos* v0, const HE_Pos* v1, bool bExcludeEdgeWithPair = false) const;
 	HE_Edge* edge_;
 };
 
@@ -61,6 +71,15 @@ struct HE_Edge
 		if (vert_)
 			delete vert_;
 	}
+    
+    void SetPair( HE_Edge* pair )
+    {
+        if(pair == NULL)
+            return;
+        
+        pair_ = pair;
+        pair->pair_ = this;
+    }
 
     HE_Vertex* vert_;
     HE_Edge* pair_;
@@ -72,18 +91,26 @@ struct HE_Edge
 class HalfEdgeMesh
 {
 public:
+    
+    ~HalfEdgeMesh();
 
 	void AddFace(const HE_FacePtr& pFace) { m_pFaces.Add(pFace); }
 	void SolvePair(const HE_FacePtr& pFace);
 
 	int GetFaceCount() const { return m_pFaces.Num(); }
 	const HE_FacePtr& GetFace(int idx) const { return m_pFaces[idx]; }
+    
+    int GetPosCount() const { return m_pPosList.Num(); }
+    const HE_Pos* GetPos(int idx) const { return m_pPosList[idx]; }
 
     void Clear() { m_pFaces.RemoveAll( [&](const HE_FacePtr&){return true;} ); }
+    
+    HE_Pos* FindPos( const FVector& pos );
 
 private:
 
 	TArray<HE_FacePtr> m_pFaces;
+    TArray<HE_Pos*> m_pPosList;
 };
 
 typedef TSharedPtr<HalfEdgeMesh> HalfEdgeMeshPtr;

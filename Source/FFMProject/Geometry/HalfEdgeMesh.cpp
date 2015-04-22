@@ -52,24 +52,30 @@ void HE_Face::MakeVertexList(TArray<FVector>& outVertices) const
 	HE_Edge* edge = edge_;
 	do
 	{
-		outVertices.Add(edge->vert_->pos_);
+		outVertices.Add(edge->vert_->pos_->p_);
 		edge = edge->next_;
 	} while (edge != edge_);
 }
 
-HE_Edge* HE_Face::FindEdge(const FVector& v0, const FVector& v1, bool bExcludeEdgeWithPair) const
+HE_Edge* HE_Face::FindEdge(const HE_Pos* v0, const HE_Pos* v1, bool bExcludeEdgeWithPair) const
 {
 	HE_Edge* edge = edge_;
 	do
 	{
 		if(!bExcludeEdgeWithPair || !edge->pair_)
 		{
-			if (v0.Equals(edge->vert_->pos_) && v1.Equals(edge->next_->vert_->pos_))
+			if ( v0 == edge->vert_->pos_ && v1 == edge->next_->vert_->pos_ )
 				return edge;
 		}
 		edge = edge->next_;
 	} while (edge != edge_);
 	return NULL;
+}
+    
+HalfEdgeMesh::~HalfEdgeMesh()
+{
+    for( int i = 0, iCount(m_pPosList.Num()); i < iCount; ++i )
+        delete m_pPosList[i];
 }
 
 void HalfEdgeMesh::SolvePair(const HE_FacePtr& pFace)
@@ -86,14 +92,27 @@ void HalfEdgeMesh::SolvePair(const HE_FacePtr& pFace)
 				HE_Edge* pair = m_pFaces[i]->FindEdge(edge->next_->vert_->pos_, edge->vert_->pos_, true);
 				if (pair)
 				{
-					pair->pair_ = edge;
-					edge->pair_ = pair;
+					edge->SetPair(pair);
 					break;
 				}
 			}
 		}
 		edge = edge->next_;
 	} while (edge != pFace->edge_);
+}
+    
+HE_Pos* HalfEdgeMesh::FindPos( const FVector& pos )
+{
+    for( int i = 0, iCount(m_pPosList.Num()); i < iCount; ++i )
+    {
+        if ( m_pPosList[i]->p_.Equals(pos) )
+            return m_pPosList[i];
+    }
+    
+    HE_Pos* pNewPos = new HE_Pos(pos);
+    m_pPosList.Add(pNewPos);
+    
+    return pNewPos;
 }
 
 }

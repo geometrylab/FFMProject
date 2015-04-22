@@ -10,6 +10,7 @@ class LoopSubdivision
 public:
     
 	ModelPtr Subdivide(ModelPtr pHalfEdgeMesh);
+    void Subdivide_2(ModelPtr pHalfEdgeMesh);
 
 private:
 	
