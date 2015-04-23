@@ -103,7 +103,7 @@ public:
     int GetPosCount() const { return m_pPosList.Num(); }
     const HE_Pos* GetPos(int idx) const { return m_pPosList[idx]; }
 
-    void Clear() { m_pFaces.RemoveAll( [&](const HE_FacePtr&){return true;} ); }
+    void Clear();
     
     HE_Pos* FindPos( const FVector& pos );
 

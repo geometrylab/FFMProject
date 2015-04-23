@@ -74,8 +74,16 @@ HE_Edge* HE_Face::FindEdge(const HE_Pos* v0, const HE_Pos* v1, bool bExcludeEdge
     
 HalfEdgeMesh::~HalfEdgeMesh()
 {
+    Clear();
+}
+    
+void HalfEdgeMesh::Clear()
+{
+    m_pFaces.RemoveAll( [&](const HE_FacePtr&){return true;} );
+
     for( int i = 0, iCount(m_pPosList.Num()); i < iCount; ++i )
         delete m_pPosList[i];
+    m_pPosList.RemoveAll( [&](HE_Pos*&){return true;} );
 }
 
 void HalfEdgeMesh::SolvePair(const HE_FacePtr& pFace)
